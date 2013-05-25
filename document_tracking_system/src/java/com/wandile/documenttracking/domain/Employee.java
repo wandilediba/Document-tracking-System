@@ -8,11 +8,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -25,14 +28,59 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private Name fname;
-    private Name lname;
+    @Embedded
+    private Name name;
+    @Embedded
+    private Contact contact;
+    @OneToMany()
+    private List<Document> document = new ArrayList<Document>();
+    
     private int emp_id;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Department> departments = new ArrayList<Department>();
-    
+    @OneToOne(cascade = CascadeType.ALL)
+    private List<Department> deptid = new ArrayList<Department>();
 
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    public List<Document> getDocument() {
+        return document;
+    }
+
+    public void setDocument(List<Document> document) {
+        this.document = document;
+    }
+
+    public int getEmp_id() {
+        return emp_id;
+    }
+
+    public void setEmp_id(int emp_id) {
+        this.emp_id = emp_id;
+    }
+
+    public List<Department> getDeptid() {
+        return deptid;
+    }
+
+    public void setDeptid(List<Department> deptid) {
+        this.deptid = deptid;
+    }
+    
+    
     public Long getId() {
         return id;
     }
