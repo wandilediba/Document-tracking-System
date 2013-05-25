@@ -9,22 +9,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
  *
- * @author 209043946
+ * @author DibaW
  */
 @Entity
-public class Document implements Serializable {
+public class DeptInfo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-  
-    @ManyToOne
-    private Employee employee;
+    private String name;
+    private String abreviation;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAbreviation() {
+        return abreviation;
+    }
+
+    public void setAbreviation(String abreviation) {
+        this.abreviation = abreviation;
+    }
+   
+    
 
     public Long getId() {
         return id;
@@ -44,10 +60,10 @@ public class Document implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Document)) {
+        if (!(object instanceof DeptInfo)) {
             return false;
         }
-        Document other = (Document) object;
+        DeptInfo other = (DeptInfo) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -56,7 +72,7 @@ public class Document implements Serializable {
 
     @Override
     public String toString() {
-        return "com.wandile.documenttracking.domain.Document[ id=" + id + " ]";
+        return "com.wandile.documenttracking.domain.DeptInfo[ id=" + id + " ]";
     }
     
 }
