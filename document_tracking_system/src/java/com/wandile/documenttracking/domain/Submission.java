@@ -5,10 +5,14 @@
 package com.wandile.documenttracking.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,6 +24,49 @@ public class Submission implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    private int submissionId;
+    private String description;
+    private String status;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<SingnedBy> singnedby = new ArrayList<SingnedBy>();
+
+    public int getSubmissionId() {
+        return submissionId;
+    }
+
+    public void setSubmissionId(int submissionId) {
+        this.submissionId = submissionId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<SingnedBy> getSingnedby() {
+        return singnedby;
+    }
+
+    public void setSingnedby(List<SingnedBy> singnedby) {
+        this.singnedby = singnedby;
+    }
+    
+    
+    
+    
+    
 
     public Long getId() {
         return id;
