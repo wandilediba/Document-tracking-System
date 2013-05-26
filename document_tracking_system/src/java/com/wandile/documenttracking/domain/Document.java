@@ -5,11 +5,13 @@
 package com.wandile.documenttracking.domain;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -22,9 +24,48 @@ public class Document implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-  
-    @ManyToOne
+    private int docId;
+    private String status;
+    @OneToOne
+    private Document_info docInfo;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
     private Employee employee;
+
+    public int getDocId() {
+        return docId;
+    }
+
+    public void setDocId(int docId) {
+        this.docId = docId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Document_info getDocInfo() {
+        return docInfo;
+    }
+
+    public void setDocInfo(Document_info docInfo) {
+        this.docInfo = docInfo;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+    
+  
+    
 
     public Long getId() {
         return id;
