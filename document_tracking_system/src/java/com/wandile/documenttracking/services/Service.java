@@ -29,6 +29,6 @@ public interface Service<T,ID> {
 
     public T getByPropertyName(String name, String value);
 
-    public List<T> getEntitiesByProperName(String name, String value);
+    
     
 }
