@@ -17,23 +17,18 @@ import sun.org.mozilla.javascript.internal.Node;
  */
 public class EmployeeFactory {
     
-    public static Employee getPerson(Map<String, String> value, int emp_id,int fax, int tel, int docId){
     
-        Employee emp = new Employee();
-        emp.setEmp_id(emp_id);
+        public static Employee createCustomer(Map<String,String> values,int emp_id, int fax,int tel){
+         Employee emp = new Employee();
+         Name name = NameFactory.createName(values);
+         Contact contact = ContactFactory.createContact(values,fax, tel);
         
-        Name name = new Name();
-        name.setFname(value.get("fname"));
-        name.setLname(value.get("lname"));
-        
-        Contact contact  =  new Contact();
-        contact.setEmail(value.get("email"));
-        contact.setFax(fax);
-        contact.setTel(tel);
-        
-        emp.setName(name);
-        emp.setContact(contact);
-        return emp;
-    }
+         emp.setContact(contact);
+         
+         emp.setName(name);
+         
+         return emp;
+     }
+    
     
 }
