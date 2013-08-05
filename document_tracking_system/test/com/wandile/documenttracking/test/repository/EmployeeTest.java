@@ -68,20 +68,20 @@ public class EmployeeTest {
       emp.setName(name);
       
       
-//      employeeCrudModelService = (EmployeeCrudModelService)ctx.getBean("employeeCrudModelService");
-//      employeeCrudModelService.persist(emp);
-//      id = emp.getId();
+     employeeCrudModelService = (EmployeeCrudModelService)ctx.getBean("employeeCrudModelService");
+     employeeCrudModelService.persist(emp);
+     id = emp.getId();
       Assert.assertNotNull(emp);
       
       }
-     /* @Test
+      @Test
       public void readEmployee(){
           
-         employeeCrudModelservice = (EmployeeCrudModelService) ctx.getBean("employeeCrudModelservice");
-        Employee emp1 = employeeCrudModelservice.findById(id);
+         employeeCrudModelService = (EmployeeCrudModelService) ctx.getBean("employeeCrudModelService");
+        Employee emp1 = employeeCrudModelService.findById(id);
         Assert.assertNotNull(emp1);
           
-      }*/
+      }
    
       @Test
       public void updateEmployeTest(){
@@ -95,4 +95,16 @@ public class EmployeeTest {
           
           
       }
+      
+      @Test(dependsOnMethods ="readEmployee" )
+    public void updateEmployee() {
+        employeeCrudModelService = (EmployeeCrudModelService) ctx.getBean("employeeCrudModelService");
+        Employee k = employeeCrudModelService.findById(id);
+        k.setEmp_id(999);
+        employeeCrudModelService.merge(k);
+        Employee update = employeeCrudModelService.findById(id);
+        Assert.assertEquals(update.getEmp_id(), 999);
+        }
+      
+      
  }
