@@ -12,11 +12,11 @@ import java.util.Map;
  * @author DibaW
  */
 public class ContactFactory {
-    public static Contact createContact(Map<String,String> values, int fax, int tel) {
+    public static Contact createContact( int fax, int tel, String email) {
         Contact contact = new Contact();
         contact.setFax(fax);
         contact.setTel(tel);
-        contact.setEmail("email");
+        contact.setEmail(email);
         return contact;
     }
 }

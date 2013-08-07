@@ -5,62 +5,61 @@
 package com.wandile.documenttracking.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 /**
  *
- * @author 209043946
+ * @author DibaW
  */
 @Entity
-public class Department implements Serializable {
+public class Location implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private int deptid;
-    private DeptInfo deptinfo;
+    String City;
+    String Building;
+    String office;
     
-    @OneToMany(cascade= CascadeType.ALL)
-    private List<Employee> employee = new ArrayList<Employee>();
+    @ManyToOne
+    Document document;
 
-    public int getDeptid() {
-        return deptid;
+    public String getCity() {
+        return City;
     }
 
-    public void setDeptid(int deptid) {
-        this.deptid = deptid;
+    public void setCity(String City) {
+        this.City = City;
     }
 
-    public DeptInfo getDeptinfo() {
-        return deptinfo;
+    public String getBuilding() {
+        return Building;
     }
 
-    public void setDeptinfo(DeptInfo deptinfo) {
-        this.deptinfo = deptinfo;
+    public void setBuilding(String Building) {
+        this.Building = Building;
     }
 
-    
-
-    
-
-    public List<Employee> getEmployee() {
-        return employee;
+    public String getOffice() {
+        return office;
     }
 
-    public void setEmployee(List<Employee> employee) {
-        this.employee = employee;
+    public void setOffice(String office) {
+        this.office = office;
     }
-    
-    
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        this.document = document;
+    }
 
     public Long getId() {
         return id;
@@ -80,10 +79,10 @@ public class Department implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Department)) {
+        if (!(object instanceof Location)) {
             return false;
         }
-        Department other = (Department) object;
+        Location other = (Location) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -92,7 +91,7 @@ public class Department implements Serializable {
 
     @Override
     public String toString() {
-        return "com.wandile.documenttracking.domain.Department[ id=" + id + " ]";
+        return "com.wandile.documenttracking.domain.Location[ id=" + id + " ]";
     }
     
 }

@@ -4,10 +4,16 @@
  */
 package com.wandile.documenttracking.test.repository;
 
+import com.wandile.documenttracking.app.factories.ContactFactory;
+import com.wandile.documenttracking.app.factories.EmployeeFactory;
+import com.wandile.documenttracking.app.factories.NameFactory;
 import com.wandile.documenttracking.domain.Contact;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.domain.Name;
 import com.wandile.documenttracking.services.crud.EmployeeCrudModelService;
+import com.wandile.documenttracking.services.crud.impl.EmployeeCrudModelServiceImpl;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
@@ -53,7 +59,23 @@ public class EmployeeTest {
     
       @Test
       public void createEmployee() {
-      Employee emp = new Employee();
+          
+        Name name = NameFactory.createName("Wandile", "Diba");
+        Contact cont = ContactFactory.createContact(021, 012, "dibaw@dot.gov.za");
+        
+        Employee emp = EmployeeFactory.createEmployee(null, name, null, cont, 123);
+        
+        employeeCrudModelService = (EmployeeCrudModelService)ctx.getBean("EmployeeCrudModelService");
+        employeeCrudModelService.persist(emp);
+        id = emp.getId();
+        Assert.assertNotNull(emp);  
+          
+          
+          
+          
+          
+          
+     /*Employee emp = new Employee();
       emp.setEmp_id(111111);
       
       Name name = new Name();
@@ -71,10 +93,10 @@ public class EmployeeTest {
      employeeCrudModelService = (EmployeeCrudModelService)ctx.getBean("employeeCrudModelService");
      employeeCrudModelService.persist(emp);
      id = emp.getId();
-      Assert.assertNotNull(emp);
+      Assert.assertNotNull(emp);*/
       
       }
-      @Test
+    /*  @Test
       public void readEmployee(){
           
          employeeCrudModelService = (EmployeeCrudModelService) ctx.getBean("employeeCrudModelService");
@@ -104,7 +126,7 @@ public class EmployeeTest {
         employeeCrudModelService.merge(k);
         Employee update = employeeCrudModelService.findById(id);
         Assert.assertEquals(update.getEmp_id(), 999);
-        }
+        }*/
       
       
  }

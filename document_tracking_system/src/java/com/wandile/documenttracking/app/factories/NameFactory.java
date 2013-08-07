@@ -13,10 +13,10 @@ import java.util.Map;
  */
 public class NameFactory {
    
-    public static Name createName(Map<String,String> values) {
+    public static Name createName(String firstName, String lastName) {
         Name name = new Name();
-        name.setFname(values.get("firstName"));
-        name.setLname(values.get("lastName"));        
+        name.setFname("firstName");
+        name.setLname("lastName");        
         return name;
     }
 }

@@ -86,6 +86,11 @@ public class EmployeeCrudModelServiceImpl implements EmployeeCrudModelService {
         setDao(dao);
         return dao.getByPropertyName(name, value);
     }
+    @Override
+    public List<Employee> getEntitiesByProperName(String name, String value) {
+        setDao(dao);
+        return dao.getEntitiesByProperName(name, value);
+    }
 
    
 
