@@ -5,11 +5,13 @@
 package com.wandile.documenttracking.app.factories;
 
 import com.wandile.documenttracking.domain.Contact;
+import com.wandile.documenttracking.domain.Department;
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.domain.Name;
-import java.util.Map;
-import sun.org.mozilla.javascript.internal.Node;
+import java.util.List;
+
+
 
 /**
  *
@@ -18,14 +20,12 @@ import sun.org.mozilla.javascript.internal.Node;
 public class EmployeeFactory {
     
     
-        public static Employee createCustomer(Map<String,String> values,int emp_id, int fax,int tel){
+        public static Employee createEmployee(List<Department> dept,Name name,List<Document> doc,Contact contact,int emp_id){
          Employee emp = new Employee();
-         Name name = NameFactory.createName(values);
-         Contact contact = ContactFactory.createContact(values,fax, tel);
-        
-         emp.setContact(contact);
-         
          emp.setName(name);
+         emp.setContact(contact);
+         emp.setEmp_id(emp_id); 
+         emp.setDocument(doc);
          
          return emp;
      }
