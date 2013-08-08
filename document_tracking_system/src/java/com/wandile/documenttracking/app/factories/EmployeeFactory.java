@@ -19,13 +19,21 @@ import java.util.List;
  */
 public class EmployeeFactory {
     
-    
-        public static Employee createEmployee(List<Department> dept,Name name,List<Document> doc,Contact contact,int emp_id){
+    /* public static Employee createEmployee(List<Department> dept,Name name,List<Document> doc,Contact contact,int emp_id){
          Employee emp = new Employee();
          emp.setName(name);
          emp.setContact(contact);
          emp.setEmp_id(emp_id); 
          emp.setDocument(doc);
+         
+         return emp;*/
+    
+        public static Employee createEmployee(Name name,Contact contact,int emp_id){
+         Employee emp = new Employee();
+         emp.setName(name);
+         emp.setContact(contact);
+         emp.setEmp_id(emp_id); 
+        // emp.setDocument(doc);
          
          return emp;
      }

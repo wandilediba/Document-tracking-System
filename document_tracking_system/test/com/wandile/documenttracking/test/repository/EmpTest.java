@@ -14,56 +14,61 @@ import com.wandile.documenttracking.services.crud.services.EmployeeCrudService;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 /**
  *
  * @author DibaW
  */
-public class EmployeeTest {
-     private EmployeeCrudService employeeCrudService;
+public class EmpTest {
+    
+    private EmployeeCrudService employeeCrudService;
      //private CourseService courseService;
     private Long id;
     private static ApplicationContext ctx;
+    
+    public EmpTest() {
+    }
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    // @Test
+    // public void hello() {}
 
-    
-    public EmployeeTest() {
-    }
-    
     @BeforeClass
-    public static void setUpClass() {
-        ctx = new ClassPathXmlApplicationContext("classpath:com/wandile/documenttracking/app/conf/applicationContext-*.xml");
+    public static void setUpClass() throws Exception {
+        ctx = new ClassPathXmlApplicationContext("classpath:com/wandile/documenttracking/app/conf/ApplicationContext-*.xml");
     }
-    
+
     @AfterClass
-    public static void tearDownClass() {
+    public static void tearDownClass() throws Exception {
+    }
+
+    @BeforeMethod
+    public void setUpMethod() throws Exception {
+    }
+
+    @AfterMethod
+    public void tearDownMethod() throws Exception {
     }
     
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-    
-      @Test
+    @Test
       public void createEmployee() {
           
         Name name = NameFactory.createName("Wandile", "Diba");
         Contact cont = ContactFactory.createContact(021, 012, "dibaw@dot.gov.za");
-        Map<String,String>Values = new HashMap<String, String>();
-        Values.put("subject", "License Cards");
-        Values.put("Author", "Mr Diba");
-        Date dat = new Date();
+        //Map<String,String>Values = new HashMap<String, String>();
+        //Values.put("subject", "License Cards");
+       // Values.put("Author", "Mr Diba");
+        //Date dat = new Date();
        // SimpleDateFormat ft = new SimpleDateFormat("dd/MM/yy");
          //Document_Info = DocInfoFactory.createDocFactory(Values, dat);
         

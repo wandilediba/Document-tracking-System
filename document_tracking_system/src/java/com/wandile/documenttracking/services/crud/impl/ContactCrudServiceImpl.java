@@ -4,9 +4,10 @@
  */
 package com.wandile.documenttracking.services.crud.impl;
 
-import com.wandile.documenttracking.domain.Employee;
+import com.wandile.documenttracking.domain.Contact;
+import com.wandile.documenttracking.domain.Name;
 import com.wandile.documenttracking.repository.GenericDAO;
-import com.wandile.documenttracking.services.crud.EmployeeCrudModelService;
+import com.wandile.documenttracking.services.crud.services.ContactCrudService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,47 +17,45 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author DibaW
  */
-@Service("employeeCrudModelService")
+@Service("ContactCrudService")
 @Transactional
-public class EmployeeCrudModelServiceImpl implements EmployeeCrudModelService {
-
+public class ContactCrudServiceImpl implements ContactCrudService {
+    
     @Autowired
-    private GenericDAO<Employee> dao;
-
-    public final void setDao(final GenericDAO< Employee> daoToSet) {
+    private GenericDAO<Contact> dao;
+    
+     public final void setDao(final GenericDAO< Contact> daoToSet) {
         this.dao = daoToSet;
-        this.dao.setClazz( Employee.class);
+        this.dao.setClazz(Contact.class);
     }
 
-    public  EmployeeCrudModelServiceImpl() {
+    public ContactCrudServiceImpl() {
     }
-
     @Override
-    public  Employee findById(Long id) {
+    public Contact findById(Long id) {
         setDao(dao);
         return dao.findById(id);
     }
-
     @Override
-    public List< Employee> findAll() {
+    public List<Contact> findAll() {
         setDao(dao);
         return dao.findAll();
     }
 
     @Override
-    public void persist( Employee entity) {
+    public void persist(Contact entity) {
         setDao(dao);
         dao.persist(entity);
     }
 
     @Override
-    public void merge( Employee entity) {
+    public void merge(Contact entity) {
         setDao(dao);
         dao.merge(entity);
     }
 
     @Override
-    public void remove( Employee entity) {
+    public void remove(Contact entity) {
         setDao(dao);
         dao.remove(entity);
     }
@@ -64,38 +63,33 @@ public class EmployeeCrudModelServiceImpl implements EmployeeCrudModelService {
     @Override
     public void removeById(Long entityId) {
         setDao(dao);
-         Employee v = dao.findById(entityId);
+        Contact v = dao.findById(entityId);
         dao.remove(v);
     }
 
     @Override
-    public List< Employee> findInRange(int firstResult, int maxResults) {
+    public List<Contact> findInRange(int firstResult, int maxResults) {
         setDao(dao);
         return dao.findInRange(firstResult, maxResults);
 
     }
-
     @Override
     public long count() {
         setDao(dao);
         return dao.count();
     }
-
     @Override
-    public  Employee getByPropertyName(String name, String value) {
+    public Contact getByPropertyName(String name, String value) {
         setDao(dao);
         return dao.getByPropertyName(name, value);
     }
+
     @Override
-    public List<Employee> getEntitiesByProperName(String name, String value) {
+    public List<Contact> getEntitiesByProperName(String name, String value) {
         setDao(dao);
         return dao.getEntitiesByProperName(name, value);
-    }
-
-   
 
     
-
-   
-
+    }
+    
 }
