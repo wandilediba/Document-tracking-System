@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -30,15 +31,26 @@ public class Employee implements Serializable {
     
     @Embedded
     private Name name;
+    
     @Embedded
     private Contact contact;
+    
     @OneToMany()
+    @JoinColumn(name="emp_id")
     private List<Document> document = new ArrayList<Document>();
     
     private int emp_id;
+
+    public Department getDept() {
+        return dept;
+    }
+
+    public void setDept(Department dept) {
+        this.dept = dept;
+    }
     
-    @OneToOne(cascade = CascadeType.ALL)
-    private List<Department> deptid = new ArrayList<Department>();
+    @OneToOne
+    private Department dept;
 
     public Name getName() {
         return name;
@@ -57,8 +69,8 @@ public class Employee implements Serializable {
     }
 
     public List<Document> getDocument() {
-        return document;
-    }
+       return document;
+   }
 
     public void setDocument(List<Document> document) {
         this.document = document;
@@ -72,13 +84,7 @@ public class Employee implements Serializable {
         this.emp_id = emp_id;
     }
 
-    public List<Department> getDeptid() {
-        return deptid;
-    }
-
-    public void setDeptid(List<Department> deptid) {
-        this.deptid = deptid;
-    }
+    
     
     
     public Long getId() {

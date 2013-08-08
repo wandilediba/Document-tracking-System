@@ -4,5 +4,6 @@
     <class>com.wandile.documenttracking.domain.DeptInfo</class>
     <class>com.wandile.documenttracking.domain.Submission</class>
     <class>com.wandile.documenttracking.domain.Location</class>
+    <class>com.wandile.documenttracking.domain.SingnedBy</class>
   </persistence-unit>
 </persistence>
