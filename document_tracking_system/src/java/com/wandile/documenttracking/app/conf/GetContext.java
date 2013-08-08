@@ -5,6 +5,7 @@
 
 package com.wandile.documenttracking.app.conf;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 
 /**
@@ -13,11 +14,13 @@ import org.springframework.context.ApplicationContext;
  */
 public class GetContext {
 private static ApplicationContext ctx;
-
+   
     public static void setApplicationContext(ApplicationContext applicationContext) {
         ctx = applicationContext;
     }
     public static ApplicationContext getApplicationContext() {
         return ctx;
     }
+    
+   
 }
