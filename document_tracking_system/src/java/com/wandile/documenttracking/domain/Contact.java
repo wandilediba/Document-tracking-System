@@ -14,23 +14,23 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Contact implements Serializable{
     
-    private int tel;
-    private int fax;
+    private String tel;
+    private String fax;
     private String email;
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
-    public int getFax() {
+    public String getFax() {
         return fax;
     }
 
-    public void setFax(int fax) {
+    public void setFax(String fax) {
         this.fax = fax;
     }
 
@@ -41,7 +41,8 @@ public class Contact implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+   
     
     
     

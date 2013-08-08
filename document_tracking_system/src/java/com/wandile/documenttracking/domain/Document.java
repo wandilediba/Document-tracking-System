@@ -26,7 +26,8 @@ public class Document implements Serializable {
     
     private int docId;
     private String status;
-    @OneToOne
+    
+    //@OneToOne
     private Document_info docInfo;
     
     @ManyToOne(cascade = CascadeType.ALL)

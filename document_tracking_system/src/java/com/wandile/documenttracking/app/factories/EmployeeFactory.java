@@ -10,6 +10,7 @@ import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.domain.Name;
 import java.util.List;
+import java.util.Map;
 
 
 
@@ -18,24 +19,16 @@ import java.util.List;
  * @author 209043946
  */
 public class EmployeeFactory {
-    
-    /* public static Employee createEmployee(List<Department> dept,Name name,List<Document> doc,Contact contact,int emp_id){
-         Employee emp = new Employee();
-         emp.setName(name);
-         emp.setContact(contact);
-         emp.setEmp_id(emp_id); 
-         emp.setDocument(doc);
+        public static Employee createEmployee(Map<String, String> values, int empid){
+        Employee employee = new Employee();
+         Name  name = NameFactory.createName(values);
+         Contact contact = ContactFactory.createContact(values);
          
-         return emp;*/
-    
-        public static Employee createEmployee(Name name,Contact contact,int emp_id){
-         Employee emp = new Employee();
-         emp.setName(name);
-         emp.setContact(contact);
-         emp.setEmp_id(emp_id); 
-        // emp.setDocument(doc);
+         employee.setContact(contact);
+         employee.setName(name);
+         employee.setEmp_id(empid);
          
-         return emp;
+         return employee;
      }
     
     
