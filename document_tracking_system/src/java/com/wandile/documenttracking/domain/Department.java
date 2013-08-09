@@ -27,6 +27,8 @@ public class Department implements Serializable {
     private Long id;
     
     private int deptid;
+    
+    @OneToOne
     private DeptInfo deptinfo;
     
     @OneToMany(cascade= CascadeType.ALL)
