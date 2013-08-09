@@ -34,12 +34,23 @@ public class Employee implements Serializable {
     
     @Embedded
     private Contact contact;
+    @OneToOne
+    private Department  department;
+    private int emp_id;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
     
     @OneToMany()
     @JoinColumn(name="emp_id")
     private List<Document> document = new ArrayList<Document>();
     
-    private int emp_id;
+    
 
     public Department getDept() {
         return dept;

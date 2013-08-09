@@ -64,39 +64,41 @@ public class EmpTest {
     public void tearDownMethod() throws Exception {
     }
     
-    @Test
+      @Test
       public void createEmployee() {
           
         Map<String, String> details = new HashMap<String, String>();
         //Name
-        details.put("fname", "Andisiwe");
-        details.put("lname", "Jele");
-        
+        details.put("FNAME", "Andisiwe");
+        details.put("LNAME", "Jele");
+        Name name = NameFactory.createName(details);
         //Contact
-        details.put("tel", "0214657896");
-        details.put("fax", "0214614589");
-        details.put("email", "jele@gmail.com");
+        details.put("TEL", "0214657896");
+        details.put("FAX", "0214614589");
+        details.put("EMAIL", "jele@gmail.com");
+        Contact cont = ContactFactory.createContact(details);
         
-        Employee Aj = EmployeeFactory.createEmployee(details, 1245);
+        Employee Aj = EmployeeFactory.createEmployee( name, cont,  1246);
         employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         employeeCrudService.persist(Aj);
         id = Aj.getId();
         
         Assert.assertNotNull(Aj);
      }
+      
     @Test
     public void readEmployee(){
-        employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
+        employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         Employee k = employeeCrudService.findById(id);
         Assert.assertNotNull(k);   
         
     }
     
      @Test(dependsOnMethods ="readEmployee" )
-    public void updateLecturer() {
-        employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
+    public void updateEmployee() {
+        employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         Employee k = employeeCrudService.findById(id);
-        k.setEmp_id(999);
+        k.setEmp_id(1245);
         employeeCrudService.merge(k);
         Employee update = employeeCrudService.findById(id);
         Assert.assertEquals(update.getEmp_id(), "999");
@@ -104,17 +106,17 @@ public class EmpTest {
         
     }
      
-     @Test(dependsOnMethods ="updateEmployee" )
-    public void readLecturers() {
+    /* @Test  //(dependsOnMethods ="updateEmployee" )
+    public void readEmployee() {
         employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
         List<Employee> employee = employeeCrudService.findAll();
         Assert.assertTrue(employee.size() > 0);
         
-    }
+    }*/
     
      @Test(dependsOnMethods ="readEmployee" )
-    public void deleteLecturer() {
-        employeeCrudService = (EmployeeCrudService) ctx.getBean("lecturerCrudService");
+    public void deleteEmployee() {
+        employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         Employee k = employeeCrudService.findById(id);
         employeeCrudService.remove(k);
         Employee deleted = employeeCrudService.findById(id);

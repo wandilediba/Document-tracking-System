@@ -18,6 +18,8 @@ public class Document_info implements Serializable {
     private String subject;
     private String Author;
     private Date duedate;
+    
+    
 
     public String getSubject() {
         return subject;
