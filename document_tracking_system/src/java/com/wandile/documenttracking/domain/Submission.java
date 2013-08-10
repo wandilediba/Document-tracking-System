@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -28,6 +29,17 @@ public class Submission implements Serializable {
     private int submissionId;
     private String description;
     private String status;
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        this.document = document;
+    }
+    
+    @ManyToOne
+    Document document;
     @OneToMany(cascade = CascadeType.ALL)
     private List<SingnedBy> singnedby = new ArrayList<SingnedBy>();
 
