@@ -16,12 +16,11 @@ import java.util.List;
  */
 public class DepartmentFactory {
     
-    public static Department createDepartment(List<Employee> emp, DeptInfo deptinfo, int deptid){
+    public static Department createDepartment(List<Employee> emp, int deptid){
         
         Department dept = new Department();
         dept.setDeptid(deptid);
         dept.setEmployee(emp);
-        dept.setDeptinfo(deptinfo);
         return dept;
     
     

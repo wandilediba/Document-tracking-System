@@ -28,8 +28,7 @@ public class Department implements Serializable {
     
     private int deptid;
     
-    @OneToOne
-    private DeptInfo deptinfo;
+    
     
     @OneToMany(cascade= CascadeType.ALL)
     private List<Employee> employee = new ArrayList<Employee>();
@@ -42,17 +41,7 @@ public class Department implements Serializable {
         this.deptid = deptid;
     }
 
-    public DeptInfo getDeptinfo() {
-        return deptinfo;
-    }
-
-    public void setDeptinfo(DeptInfo deptinfo) {
-        this.deptinfo = deptinfo;
-    }
-
-    
-
-    
+      
 
     public List<Employee> getEmployee() {
         return employee;
