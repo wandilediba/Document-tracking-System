@@ -88,7 +88,7 @@ public class EmpTest {
         Assert.assertNotNull(Aj);
      }
       
-    //@Test
+    @Test
     public void readEmployee(){
         employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         Employee k = employeeCrudService.findById(id);
@@ -96,27 +96,22 @@ public class EmpTest {
         
     }
     
-    // @Test(dependsOnMethods ="readEmployee" )
+     @Test(dependsOnMethods ="readEmployee" )
     public void updateEmployee() {
         employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         Employee k = employeeCrudService.findById(id);
-        k.setEmp_id(1245);
+        k.setEmp_id(1118);
         employeeCrudService.merge(k);
         Employee update = employeeCrudService.findById(id);
-        Assert.assertEquals(update.getEmp_id(), "999");
+        Assert.assertEquals(update.getEmp_id(), "1118");
         
         
     }
      
-    /* @Test  //(dependsOnMethods ="updateEmployee" )
-    public void readEmployee() {
-        employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
-        List<Employee> employee = employeeCrudService.findAll();
-        Assert.assertTrue(employee.size() > 0);
         
-    }*/
     
-     //@Test(dependsOnMethods ="readEmployee" )
+    
+     @Test(dependsOnMethods ="readEmployee" )
     public void deleteEmployee() {
         employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         Employee k = employeeCrudService.findById(id);

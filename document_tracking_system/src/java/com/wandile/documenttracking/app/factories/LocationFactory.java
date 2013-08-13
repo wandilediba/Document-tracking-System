@@ -13,13 +13,13 @@ import com.wandile.documenttracking.domain.Location;
  */
 public class LocationFactory {
     
-    public static Location createLocation(Document doc, String city, String building, String office ){
+    public static Location createLocation( String city, String building, String office ){
         
         Location loc = new Location();
         loc.setBuilding(building);
         loc.setCity(city);
         loc.setOffice(office);
-        loc.setDocument(doc);
+        //loc.setDocument(doc);
         
         
         return loc;

@@ -40,9 +40,6 @@ public class Employee implements Serializable {
     
     private int emp_id;
     
-    @OneToMany()
-    @JoinColumn(name="emp_id")
-    private List<Document> document = new ArrayList<Document>();
 
     public Department getDepartment() {
         return department;
@@ -72,13 +69,7 @@ public class Employee implements Serializable {
         this.contact = contact;
     }
 
-    public List<Document> getDocument() {
-       return document;
-   }
-
-    public void setDocument(List<Document> document) {
-        this.document = document;
-    }
+    
 
     public int getEmp_id() {
         return emp_id;

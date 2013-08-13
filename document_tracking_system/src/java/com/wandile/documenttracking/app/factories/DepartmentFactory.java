@@ -9,6 +9,7 @@ import com.wandile.documenttracking.domain.DeptInfo;
 import com.wandile.documenttracking.domain.Employee;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -16,11 +17,19 @@ import java.util.List;
  */
 public class DepartmentFactory {
     
-    public static Department createDepartment(List<Employee> emp, int deptid){
+    public static Department createDepartment(Map<String, String> details, int deptid){
         
         Department dept = new Department();
         dept.setDeptid(deptid);
-        dept.setEmployee(emp);
+        
+        details.get("name");
+        details.get("abreviation");
+        
+       DeptInfo dept1 = DeptInfoFactory.createDeptInfo(details);
+        
+        dept.setDeptInfo(dept1);
+        //dept.setEmployee(emp);
+        
         return dept;
     
     
