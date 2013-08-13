@@ -37,7 +37,7 @@ public class EmployeeFactory {
          contact.setEmail(values.get("fax"));
          
          
-         DeptInfo info = DeptInfoFactory.createAlbumCategory(values);
+        // DeptInfo info = DeptInfoFactory.createDeptInfo(values);
          //Department dept = DepartmentFactory.createDepartment(null, null, deptid);
          
          //dept.setDeptid(deptid);
