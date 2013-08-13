@@ -69,18 +69,18 @@ public class EmpTest {
           
         Map<String, String> details = new HashMap<String, String>();
         //Name
-        details.put("fname", "Lynx");
-        details.put("lname", "Feni");
+        details.put("fname", "Lunga");
+        details.put("lname", "langa");
         //Name name = NameFactory.createName(details);
        // Contact
-        details.put("tel", "01145896");
-        details.put("fax", "011236589");
-        details.put("email", "fenil@gmail.com");
+        details.put("tel", "01236589");
+        details.put("fax", "01256987");
+        details.put("email", "lungL@gmail.com");
         //Contact cont = ContactFactory.createContact(details);
         
         
         
-        Employee Aj = EmployeeFactory.createEmployee( details,  1118);
+        Employee Aj = EmployeeFactory.createEmployee( details,  1120);
         employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         employeeCrudService.persist(Aj);
         id = Aj.getId();
@@ -103,13 +103,8 @@ public class EmpTest {
         k.setEmp_id(1118);
         employeeCrudService.merge(k);
         Employee update = employeeCrudService.findById(id);
-        Assert.assertEquals(update.getEmp_id(), "1118");
-        
-        
+        Assert.assertEquals(update.getEmp_id(), "1118");        
     }
-     
-        
-    
     
      @Test(dependsOnMethods ="readEmployee" )
     public void deleteEmployee() {
