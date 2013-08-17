@@ -31,8 +31,7 @@ public class Document implements Serializable {
     @Embedded
     private Document_info docInfo;
     
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Employee employee;
+   
 
     public int getDocId() {
         return docId;
@@ -58,18 +57,7 @@ public class Document implements Serializable {
         this.docInfo = docInfo;
     }
 
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-    
-  
-    
-
-    public Long getId() {
+   public Long getId() {
         return id;
     }
 
