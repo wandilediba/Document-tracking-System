@@ -22,20 +22,20 @@
         </div>
 
         <div class="control-group warning">
-            <label class="control-label" for="courseName">Course Name</label>
+            <label class="control-label" for="courseName">Department Name</label>
             <div class="controls">
-                <f:input path="courseName"  type="text" id="courseName" />
+                <f:input path="courseName"  type="text" id="DeptName" />
             </div>
         </div>
 
         <div class="control-group warning">
-            <label class="control-label" for="courseCode">Course Code </label>
+            <label class="control-label" for="Abreviation">Abbreviation </label>
             <div class="controls">
-                <f:input path="courseCode" type="text" id="courseCode"/>
+                <f:input path="courseCode" type="text" id="abreviation"/>
             </div>
         </div>
 
-        <button type="submit" class="btn btn btn-inverse btn-large">Create Course</button>
+        <button type="submit" class="btn btn btn-inverse btn-large">Create Department</button>
 
     </f:form>
     

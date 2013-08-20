@@ -7,7 +7,7 @@
     <button class="btn btn-large btn-block btn-primary" type="button">This is The Landing Page for the Application Menu</button>
 
 <center>
-    <button class="btn btn-success btn-large" type="button"><a href="courseform">Create Course</a></button>
+    <button class="btn btn-success btn-large" type="button"><a href="employeeform">Create Course</a></button>
     <button class="btn btn btn-success btn-large" type="button"><a href="courses">List Courses</a></button>
 </center>
 
