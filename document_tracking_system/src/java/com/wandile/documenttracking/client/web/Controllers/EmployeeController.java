@@ -32,11 +32,11 @@ public class EmployeeController implements Serializable{
     @Autowired
     private EmployeeService employeeService;
 
-    @RequestMapping(value = "/employeeform", method = RequestMethod.GET)
-    public String getCourseForm(Model model) {
+    @RequestMapping(value = "/employee", method = RequestMethod.GET)
+    public String getEmployeeForm(Model model) {
         EmployeeModel employeeModel = new EmployeeModel();
         model.addAttribute("employeeModel", employeeModel);
-        return "course/form";
+        return "employee/form";
     }
 
     @RequestMapping(value = "/createemployee", method = RequestMethod.POST)
@@ -56,8 +56,8 @@ public class EmployeeController implements Serializable{
         return "employee/form";
     }
 
-    @RequestMapping(value = "/employee", method = RequestMethod.GET)
-    public String getemployee(Model model) {
+    @RequestMapping(value = "/Employee", method = RequestMethod.GET)
+    public String getEmployee(Model model) {
         List<Employee> employeess = employeeService.getEmployee();
         model.addAttribute("employee", employeess);
         return "employee/employees";
@@ -79,7 +79,7 @@ public class EmployeeController implements Serializable{
     }
 
     @RequestMapping(value = "private/editEmployeeForm.html", method = RequestMethod.GET, params = {"emp_id"})
-    public String editCourseForm(@RequestParam("emp_id") String coursecodeId, Model model) {
+    public String editEmployeeForm(@RequestParam("emp_id") String emp_id, Model model) {
 
         return "editIndividualEmployeeForm";
     }
