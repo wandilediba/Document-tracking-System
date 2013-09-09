@@ -5,8 +5,8 @@
 package com.wandile.documenttracking.app.facade;
 
 import com.wandile.documenttracking.app.conf.GetContext;
-import com.wandile.documenttracking.services.crud.services.DepartmentCrudService;
-import com.wandile.documenttracking.services.crud.services.EmployeeCrudService;
+import com.wandile.documenttracking.services.crud.DepartmentCrudService;
+import com.wandile.documenttracking.services.crud.EmployeeCrudService;
 import java.io.Serializable;
 import org.springframework.context.ApplicationContext;
 
@@ -26,12 +26,12 @@ public class facade implements Serializable{
         return departmentService;
     }*/
 
-    public EmployeeCrudService getUniversityCrudService() {
+    public EmployeeCrudService getEmployeeCrudService() {
         employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
         return employeeCrudService;
     }
 
-    public DepartmentCrudService getPaymentCrudService() {
+    public DepartmentCrudService getDepartmentCrudService() {
         departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
         return departmentCrudService;
     }

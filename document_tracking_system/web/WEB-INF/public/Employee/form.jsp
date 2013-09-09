@@ -12,7 +12,7 @@
 </center>
 <p></p>
 <center>
-    <f:form id="form" method="post" modelAttribute="courseModel" class="form-horizontal" action="createcourse">
+    <f:form id="form" method="post" modelAttribute="employeeModel" class="form-horizontal" action="createemployee">
 
         <div class="control-group warning" hidden="true">
             <label class="control-label" for="inputWarning">Input with warning</label>
@@ -22,9 +22,9 @@
         </div>
 
         <div class="control-group warning">
-            <label class="control-label" for="courseName">Department Name</label>
+            <label class="control-label" for="departmentName">Department Name</label>
             <div class="controls">
-                <f:input path="courseName"  type="text" id="DeptName" />
+                <f:input path="deaprtmentName"  type="text" id="DeptName" />
             </div>
         </div>
 

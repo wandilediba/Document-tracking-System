@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("employeeapi")
 public class EmployeeRestController {
     
-    @Autowired
+   /* @Autowired
     public  List<EmployeeResources> getEmployee(){
         
     private List<Employee> employee =  employeeService.findAll();
@@ -25,6 +25,6 @@ public class EmployeeRestController {
        EmployeeResource emp = new EmployeeResource();
        emp.setEmployeeName(employee.getEmployeeName())
     
-     }
-    }
+     }*/
+    
 }

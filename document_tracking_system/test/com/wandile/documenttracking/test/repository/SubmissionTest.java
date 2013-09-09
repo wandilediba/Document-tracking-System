@@ -10,7 +10,7 @@ import com.wandile.documenttracking.app.factories.SubmissionFactory;
 import com.wandile.documenttracking.domain.Location;
 import com.wandile.documenttracking.domain.SingnedBy;
 import com.wandile.documenttracking.domain.Submission;
-import com.wandile.documenttracking.services.crud.services.SubmissionCrudService;
+import com.wandile.documenttracking.services.crud.SubmissionCrudService;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;

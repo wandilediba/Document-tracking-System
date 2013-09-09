@@ -4,8 +4,11 @@
  */
 package com.wandile.documenttracking.client.web.Controllers;
 
-import com.wandile.documenttracking.client.web.Controllers.model.Welcome;
+import com.wandile.documenttracking.app.facade.facade;
+import com.wandile.documenttracking.client.web.model.Welcome;
+import com.wandile.documenttracking.domain.Employee;
 import java.util.Date;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
+    
+    private final facade data = new facade();
     @RequestMapping({"/"})
     public String home(Model model) {
          //DON'T CREATE OBJECTS LIKE THIS, USE FACTORIES
@@ -23,6 +28,12 @@ public class IndexController {
          message.setToday(new Date());
          message.setWelcome("Welcome to the Home Page");
          model.addAttribute("msg", message);
-        return "index";
+       
+        
+        //List<Employee> emp = data.getEmployeeCrudService().findAll();
+        
+       // model.addAttribute("employees", emp);
+         return "index";
+        //return "index";
     }
 }

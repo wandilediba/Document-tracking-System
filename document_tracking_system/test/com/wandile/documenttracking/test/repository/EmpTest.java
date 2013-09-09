@@ -12,7 +12,7 @@ import com.wandile.documenttracking.domain.Contact;
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.domain.Name;
-import com.wandile.documenttracking.services.crud.services.EmployeeCrudService;
+import com.wandile.documenttracking.services.crud.EmployeeCrudService;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;

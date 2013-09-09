@@ -6,7 +6,7 @@ package com.wandile.documenttracking.test.repository;
 
 import com.wandile.documenttracking.app.factories.LocationFactory;
 import com.wandile.documenttracking.domain.Location;
-import com.wandile.documenttracking.services.crud.services.LocationCrudService;
+import com.wandile.documenttracking.services.crud.LocationCrudService;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.context.ApplicationContext;

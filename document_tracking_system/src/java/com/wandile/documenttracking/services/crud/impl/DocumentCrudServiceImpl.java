@@ -6,7 +6,7 @@ package com.wandile.documenttracking.services.crud.impl;
 
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.repository.GenericDAO;
-import com.wandile.documenttracking.services.crud.services.DocumentCrudService;
+import com.wandile.documenttracking.services.crud.DocumentCrudService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
