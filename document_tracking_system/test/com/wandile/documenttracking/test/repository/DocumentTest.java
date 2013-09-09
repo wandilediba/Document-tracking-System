@@ -8,7 +8,7 @@ import com.wandile.documenttracking.app.factories.DocInfoFactory;
 import com.wandile.documenttracking.app.factories.DocumentFactory;
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Document_info;
-import com.wandile.documenttracking.services.crud.services.DocumentCrudService;
+import com.wandile.documenttracking.services.crud.DocumentCrudService;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;

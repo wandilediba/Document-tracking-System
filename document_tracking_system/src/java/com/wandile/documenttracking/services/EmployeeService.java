@@ -4,7 +4,7 @@
  */
 package com.wandile.documenttracking.services;
 
-import com.wandile.documenttracking.client.web.Controllers.model.EmployeeModel;
+import com.wandile.documenttracking.client.web.model.EmployeeModel;
 import com.wandile.documenttracking.domain.Employee;
 import java.util.List;
 
