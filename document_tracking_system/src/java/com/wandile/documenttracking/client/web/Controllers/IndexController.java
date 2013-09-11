@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
     
-    private final facade data = new facade();
+    //private final facade data = new facade();
     @RequestMapping({"/"})
     public String home(Model model) {
          //DON'T CREATE OBJECTS LIKE THIS, USE FACTORIES
@@ -30,10 +30,8 @@ public class IndexController {
          model.addAttribute("msg", message);
        
         
-        //List<Employee> emp = data.getEmployeeCrudService().findAll();
         
-       // model.addAttribute("employees", emp);
          return "index";
-        //return "index";
+       
     }
 }

@@ -73,7 +73,7 @@ public class SubmissionTest {
         
         //Location loc = LocationFactory.createLocation("CapeTown", "120 Plein ", "1350");
         
-        Submission sub = SubmissionFactory.createSubmission(sin, "Aviation Law", "pending", 100);
+        Submission sub = SubmissionFactory.createSubmission(sin, "Aviation Law", "pending", 101);
         
         submissionCrudService = (SubmissionCrudService) ctx.getBean("SubmissionCrudService");
         submissionCrudService.persist(sub);

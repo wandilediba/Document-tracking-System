@@ -29,6 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     public List<Employee> createEmployee(EmployeeModel model) {
         Employee employee = new Employee(); // DONT DO THIS USE FACTORY
         employee.setEmp_id(model.getEmp_id());
+       
         employeeCrudService.persist(employee);
         return employeeCrudService.findAll();
     }
@@ -49,10 +50,10 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
     @Override
     public List<Employee> updateEmployee(EmployeeModel model) {
-        Employee course = new Employee(); // DONT DO THIS USE FACTORY
-        course.setEmp_id(model.getEmp_id());
+        Employee employee = new Employee(); // DONT DO THIS USE FACTORY
+        employee.setEmp_id(model.getEmp_id());
         
-        employeeCrudService.merge(course);
+        employeeCrudService.merge(employee);
         return employeeCrudService.findAll();
     }
 

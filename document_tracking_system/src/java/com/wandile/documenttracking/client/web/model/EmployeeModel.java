@@ -14,6 +14,25 @@ public class EmployeeModel implements Serializable{
     
     private Long id;
     private int emp_id;
+    private String fname;
+    private String lname;
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+    
 
     public Long getId() {
         return id;
