@@ -37,9 +37,9 @@
       <div class="masthead">
         <h3 class="text-muted">Dot Document Tracking</h3>
         <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="/document_tracking_system">Home</a></li>
           <li><a href="Employeeform">Employee</a></li>
-          <li><a href="#">Submission</a></li>
+          <li><a href="Departmentform">Department</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
