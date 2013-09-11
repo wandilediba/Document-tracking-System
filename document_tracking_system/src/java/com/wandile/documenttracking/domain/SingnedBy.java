@@ -24,15 +24,15 @@ public class SingnedBy implements Serializable {
     private Long id;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date date;
+    private Date dateof;
     private String jobTitle;
 
     public Date getDate() {
-        return date;
+        return dateof;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.dateof = date;
     }
 
     public String getJobTitle() {

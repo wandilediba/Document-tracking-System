@@ -10,17 +10,21 @@ import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.services.EmployeeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
  *
  * @author DibaW
  */
+@Controller
+@SessionAttributes
 public class EmployeeController {
     
     private final facade data = new facade();
@@ -30,8 +34,8 @@ public class EmployeeController {
     @RequestMapping(value = "/Employeeform", method = RequestMethod.GET)
     public String getEmployeeForm(Model model) {
          EmployeeModel employeeModel = new EmployeeModel();
-        model.addAttribute("courseModel", employeeModel);
-        return "course/form";
+        model.addAttribute("employeeModel", employeeModel);
+        return "Employee/form";
     }
 
    
@@ -50,14 +54,14 @@ public class EmployeeController {
     public String getEmployeeEditForm(Model model) {
         EmployeeModel EmployeeModel = new EmployeeModel();
         model.addAttribute("emp_id", EmployeeModel);
-        return "employee/form";
+        return "Employee/form";
     }
 
     @RequestMapping(value = "/Employee", method = RequestMethod.GET)
     public String getEmployee(Model model) {
         List<Employee> employeess = employeeService.getEmployee();
         model.addAttribute("employee", employeess);
-        return "employee/employees";
+        return "Employee/Employees";
     }
 
     @RequestMapping(value = "/editemployee", method = RequestMethod.GET)

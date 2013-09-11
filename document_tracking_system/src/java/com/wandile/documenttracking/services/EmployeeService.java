@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface EmployeeService {
     
-     public List<Employee> createEmployee(EmployeeModel model);
+    public List<Employee> createEmployee(EmployeeModel model);
     public List<Employee> deleteEmployee(Long id);
     public EmployeeModel getEmployeeToEdit(Long id);
     public List<Employee> updateEmployee(EmployeeModel model);
