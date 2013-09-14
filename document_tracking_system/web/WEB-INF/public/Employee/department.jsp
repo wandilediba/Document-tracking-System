@@ -21,13 +21,17 @@
         </ul>
       </div>
     <h1>Create Department</h1>
- <div id="content"   
+    
+    <div id="content"   >
+       
      <div class="form-group has-warning">
                     <label class="control-label" for="emp_id">Department Name: </label>
+                    
                     <div class="controls">
                       
                     </div>
      </div>
+                    
  
 </body>
 

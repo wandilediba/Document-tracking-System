@@ -4,6 +4,8 @@
  */
 package com.wandile.documenttracking.client.web.model;
 
+import com.wandile.documenttracking.domain.Contact;
+import com.wandile.documenttracking.domain.Name;
 import java.io.Serializable;
 
 /**
@@ -14,26 +16,19 @@ public class EmployeeModel implements Serializable{
     
     private Long id;
     private int emp_id;
-    private String fname;
-    private String lname;
+    private Name name;
+    private Contact contact;
 
-    public String getFname() {
-        return fname;
+    public Contact getContact() {
+        return contact;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
     
-
+    
     public Long getId() {
         return id;
     }
@@ -49,6 +44,17 @@ public class EmployeeModel implements Serializable{
     public void setEmp_id(int emp_id) {
         this.emp_id = emp_id;
     }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+    
+
+    
    
     
 }

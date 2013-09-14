@@ -5,13 +5,8 @@
 package com.wandile.documenttracking.app.factories;
 
 import com.wandile.documenttracking.domain.Contact;
-import com.wandile.documenttracking.domain.Department;
-import com.wandile.documenttracking.domain.DeptInfo;
-import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.domain.Name;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 

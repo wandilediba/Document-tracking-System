@@ -4,7 +4,6 @@
  */
 package com.wandile.documenttracking.services.crud;
 
-import com.wandile.documenttracking.domain.Contact;
 import com.wandile.documenttracking.domain.DeptInfo;
 import com.wandile.documenttracking.services.Service;
 

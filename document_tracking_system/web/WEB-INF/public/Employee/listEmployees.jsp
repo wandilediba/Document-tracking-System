@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Employee
-    Created on : 13 Aug 2013, 7:48:04 PM
-    Author     : 209043946
+    Document   : listEmployees
+    Created on : Sep 14, 2013, 3:22:03 PM
+    Author     : DibaW
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,12 +9,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome To Employee </title>
+        <title>List Employees</title>
     </head>
-    <body>
-  
-<p></p>
-<center>
+    <body> 
+        <div class="masthead">
+        <h3 class="text-muted">Employees Page</h3>
+        <ul class="nav nav-justified">
+          <li class="active"><a href="/document_tracking_system">Home</a></li>
+          <li><a href="Employee">List</a></li>
+          <li><a href="#">Submission</a></li>
+          <li><a href="#">Document</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div> 
+    <h1>Create Employee</h1>
+    
+    
+    </center>
+     <center>
     <table class="table table-hover">
         <caption> <h2>Employees </h2></caption>
         <thead>
@@ -42,8 +55,7 @@
 
     </table>
 
-</center>
- 
-</body>
-
+</center>               
+    </body>
 </html>
+<jsp:include page="../footer/include.jsp" />

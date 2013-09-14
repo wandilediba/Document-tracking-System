@@ -6,9 +6,6 @@ package com.wandile.documenttracking.app.factories;
 
 import com.wandile.documenttracking.domain.Department;
 import com.wandile.documenttracking.domain.DeptInfo;
-import com.wandile.documenttracking.domain.Employee;
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**

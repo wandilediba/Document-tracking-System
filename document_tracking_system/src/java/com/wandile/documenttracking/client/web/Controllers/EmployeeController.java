@@ -27,7 +27,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes
 public class EmployeeController {
     
-    private final facade data = new facade();
+   // private final facade data = new facade();
+    
     @Autowired
     private EmployeeService employeeService;
     
@@ -40,14 +41,14 @@ public class EmployeeController {
 
    
 
-    @RequestMapping(value = "/createemployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/createemployee", method = RequestMethod.GET)
     public String createEmployee(@ModelAttribute("employeeModel")  EmployeeModel employee,
             BindingResult result, Model model) {
-        employeeService.createEmployee(employee);
+            employeeService.createEmployee(employee);
 
         List<Employee> employees = employeeService.getEmployee();
-        model.addAttribute("employee", employees);
-        return "employee/employees";
+        model.addAttribute("employees", employees);
+        return "Employee/form";
     }
 
     @RequestMapping(value = "/employeeeditform", method = RequestMethod.GET)
@@ -59,9 +60,9 @@ public class EmployeeController {
 
     @RequestMapping(value = "/Employee", method = RequestMethod.GET)
     public String getEmployee(Model model) {
-        List<Employee> employeess = employeeService.getEmployee();
-        model.addAttribute("employee", employeess);
-        return "Employee/Employees";
+        List<Employee> employees = employeeService.getEmployee();
+        model.addAttribute("employees", employees);
+        return "Employee/ListEmployees";
     }
 
     @RequestMapping(value = "/editemployee", method = RequestMethod.GET)

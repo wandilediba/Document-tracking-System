@@ -5,7 +5,6 @@
 package com.wandile.documenttracking.services.crud.impl;
 
 import com.wandile.documenttracking.services.crud.DepartmentCrudService;
-import com.wandile.documenttracking.domain.Contact;
 import com.wandile.documenttracking.domain.Department;
 import com.wandile.documenttracking.repository.GenericDAO;
 import java.util.List;

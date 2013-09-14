@@ -38,8 +38,8 @@
         <h3 class="text-muted">Dot Document Tracking</h3>
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
-          <li><a href="Employeeform">Employee</a></li>
-          <li><a href="Departmentform">Department</a></li>
+          <li><a href="createemployee">Employee</a></li>
+          <li><a href="Employee">Department</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
@@ -56,19 +56,18 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+          <h2> ${msg.welcome}</h2>
+           <h3> Today is ${msg.today}</h3>
         </div>
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+          <h2>Help</h2>
+          <p> </p>
+          <p><a class="btn btn-primary" href="#">Get Help &raquo;</a></p>
        </div>
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+          <h2>Tips </h2>
+          <p></p>
+          <p><a class="btn btn-primary" href="#">View Tips &raquo;</a></p>
         </div>
       </div>
 
