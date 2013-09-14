@@ -4,24 +4,14 @@
  */
 package com.wandile.documenttracking.test.repository;
 
-import com.wandile.documenttracking.app.factories.ContactFactory;
-import com.wandile.documenttracking.app.factories.DocInfoFactory;
 import com.wandile.documenttracking.app.factories.EmployeeFactory;
-import com.wandile.documenttracking.app.factories.NameFactory;
-import com.wandile.documenttracking.domain.Contact;
-import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Employee;
-import com.wandile.documenttracking.domain.Name;
 import com.wandile.documenttracking.services.crud.EmployeeCrudService;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -69,18 +59,19 @@ public class EmpTest {
           
         Map<String, String> details = new HashMap<String, String>();
         //Name
-        details.put("fname", "Lunga");
-        details.put("lname", "langa");
+        details.put("fname", "Zama");
+        details.put("lname", "Shange");
         //Name name = NameFactory.createName(details);
+        
        // Contact
         details.put("tel", "01236589");
         details.put("fax", "01256987");
-        details.put("email", "lungL@gmail.com");
+        details.put("email", "zamzam@gmail.com");
         //Contact cont = ContactFactory.createContact(details);
         
         
         
-        Employee Aj = EmployeeFactory.createEmployee( details,  1120);
+        Employee Aj = EmployeeFactory.createEmployee( details,  1121);
         employeeCrudService = (EmployeeCrudService) ctx.getBean("EmployeeCrudService");
         employeeCrudService.persist(Aj);
         id = Aj.getId();

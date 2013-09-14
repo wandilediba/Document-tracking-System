@@ -4,7 +4,7 @@
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
 <html>
     <head>
-        <title>Marks  Application</title>
+        <title>Document Tracking</title>
         <meta charset="utf-8">
         <meta http-equiv="Cache-Control" content="no-cache"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

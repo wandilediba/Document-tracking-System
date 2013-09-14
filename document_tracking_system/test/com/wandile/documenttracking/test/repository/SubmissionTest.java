@@ -4,10 +4,8 @@
  */
 package com.wandile.documenttracking.test.repository;
 
-import com.wandile.documenttracking.app.factories.LocationFactory;
 import com.wandile.documenttracking.app.factories.SignedByFactory;
 import com.wandile.documenttracking.app.factories.SubmissionFactory;
-import com.wandile.documenttracking.domain.Location;
 import com.wandile.documenttracking.domain.SingnedBy;
 import com.wandile.documenttracking.domain.Submission;
 import com.wandile.documenttracking.services.crud.SubmissionCrudService;
@@ -18,7 +16,6 @@ import org.joda.time.DateTime;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;

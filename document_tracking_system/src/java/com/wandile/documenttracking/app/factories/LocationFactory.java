@@ -4,7 +4,6 @@
  */
 package com.wandile.documenttracking.app.factories;
 
-import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Location;
 
 /**

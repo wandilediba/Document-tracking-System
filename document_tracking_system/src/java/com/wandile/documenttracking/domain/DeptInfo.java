@@ -4,6 +4,7 @@
  */
 package com.wandile.documenttracking.domain;
 
+import java.io.Serializable;
 import javax.persistence.Embeddable;
 
 /**
@@ -11,7 +12,7 @@ import javax.persistence.Embeddable;
  * @author DibaW
  */
 @Embeddable
-public class DeptInfo {
+public class DeptInfo implements Serializable {
     
     private String name;
     private String abreviation;

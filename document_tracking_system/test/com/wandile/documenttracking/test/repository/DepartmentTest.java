@@ -5,20 +5,13 @@
 package com.wandile.documenttracking.test.repository;
 
 import com.wandile.documenttracking.app.factories.DepartmentFactory;
-import com.wandile.documenttracking.app.factories.DeptInfoFactory;
-import com.wandile.documenttracking.app.factories.EmployeeFactory;
 import com.wandile.documenttracking.domain.Department;
-import com.wandile.documenttracking.domain.DeptInfo;
-import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.services.crud.DepartmentCrudService;
-import com.wandile.documenttracking.services.crud.EmployeeCrudService;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -67,10 +60,10 @@ public class DepartmentTest {
     public void createDepartment(){
         
         Map<String, String> values = new HashMap<String, String>();
-        values.put("name", "Tranport Infromation System");
-        values.put("abreviation","TIS");
+        values.put("name", "Intergrated Transport Planning");
+        values.put("abreviation","ITP");
       
-        Department department = DepartmentFactory.createDepartment(values, 100);
+        Department department = DepartmentFactory.createDepartment(values, 101);
         
         departmentCrudService = (DepartmentCrudService) ctx.getBean("DepartmentCrudService");
         departmentCrudService.persist(department);

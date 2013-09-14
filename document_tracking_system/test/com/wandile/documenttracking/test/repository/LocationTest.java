@@ -7,12 +7,9 @@ package com.wandile.documenttracking.test.repository;
 import com.wandile.documenttracking.app.factories.LocationFactory;
 import com.wandile.documenttracking.domain.Location;
 import com.wandile.documenttracking.services.crud.LocationCrudService;
-import java.util.HashMap;
-import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -69,7 +66,7 @@ public class LocationTest {
         Assert.assertNotNull(loc);
     }  
     
-    @Test
+    @Test(dependsOnMethods ="createLocation" )
     public void readLocation(){
         locationCrudService = (LocationCrudService) ctx.getBean("locationCrudService");
         Location loc = locationCrudService.findById(id);
@@ -89,7 +86,7 @@ public class LocationTest {
         
     }
   
-    @Test(dependsOnMethods ="readLocation" )
+   @Test(dependsOnMethods ="readLocation" )
     public void deleteEmployee() {
         locationCrudService = (LocationCrudService) ctx.getBean("locationCrudService");
         Location k = locationCrudService.findById(id);
