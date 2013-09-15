@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,15 +37,15 @@ public class EmployeeController {
     public String getEmployeeForm(Model model) {
          EmployeeModel employeeModel = new EmployeeModel();
         model.addAttribute("employeeModel", employeeModel);
-        return "Employee/form";
+        return "Employee/employee";
     }
 
    
 
-    @RequestMapping(value = "/createemployee", method = RequestMethod.GET)
-    public String createEmployee(@ModelAttribute("employeeModel")  EmployeeModel employee,
+    @RequestMapping(value = "/createemployee", method = RequestMethod.POST)
+    public String createEmployee(@ModelAttribute("employeeModel")  @Validated EmployeeModel employee,
             BindingResult result, Model model) {
-            employeeService.createEmployee(employee);
+           employeeService.createEmployee(employee);
 
         List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
@@ -58,18 +59,18 @@ public class EmployeeController {
         return "Employee/form";
     }
 
-    @RequestMapping(value = "/Employee", method = RequestMethod.GET)
+    @RequestMapping(value = "/ListEmployee", method = RequestMethod.GET)
     public String getEmployee(Model model) {
-        List<Employee> employees = employeeService.getEmployee();
+       List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
-        return "Employee/ListEmployees";
+        return "Employee/listEmployees";
     }
 
     @RequestMapping(value = "/editemployee", method = RequestMethod.GET)
     public String editEmployees(Model model) {
         List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
-        return "employee/employees";
+        return "Employee/Employees";
     }
 
     @RequestMapping(value = "/deleteemployee", method = RequestMethod.GET,params = {"emp_id"})
@@ -77,7 +78,7 @@ public class EmployeeController {
         employeeService.deleteEmployee(emp_id);
         List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
-        return "employee/employees";
+        return "Employee/Employees";
     }
 
     @RequestMapping(value = "private/editEmployeeForm.html", method = RequestMethod.GET, params = {"emp_id"})

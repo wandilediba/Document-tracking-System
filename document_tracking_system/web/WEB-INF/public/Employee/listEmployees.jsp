@@ -4,26 +4,22 @@
     Author     : DibaW
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>List Employees</title>
-    </head>
+<jsp:include page="../header/include.jsp" />
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
     <body> 
+    <center>
         <div class="masthead">
-        <h3 class="text-muted">Employees Page</h3>
+        <h3 class="text-muted">Employee Page</h3>
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
-          <li><a href="Employee">List</a></li>
-          <li><a href="#">Submission</a></li>
+          <li><a href="createemployee">Create</a></li>
+          <li><a href="ListEmployee">List</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </div> 
-    <h1>Create Employee</h1>
+    <h1>List Employee</h1>
     
     
     </center>
@@ -57,5 +53,5 @@
 
 </center>               
     </body>
-</html>
+
 <jsp:include page="../footer/include.jsp" />

@@ -1,45 +1,15 @@
 <jsp:include page="header/include.jsp" />
 
 <body>
-    <!--
-    <h1 class="header">Welcome To Doc tracking</h1>
-    <h2> ${msg.welcome}</h2>
-    <h3> Today is ${msg.today}</h3>
-    <button class="btn btn-large btn-block btn-primary" type="button">Go!!!!!</button>
-
-<center>
-    <button class="btn btn-success btn-large" type="button"><a href="Employeeform">Create Employee</a></button>
-    <button class="btn btn btn-success btn-large" type="button"><a href="Employee">List Employees</a></button>
-</center>
-
-<li>
-        <ul>
-            <a href="add.html"> Add Employee </a>
-        </ul>
-        <ul>
-            <a href="list.html"> List Employee </a>
-        </ul>
-        <ul>
-            <a href="edit.html"> Edit Employee </a>
-        </ul>
-        <ul>
-            <a href="delete.html"> Delete Employee </a>
-        </ul>
-        
-        <ul>
-            <a href="time.html"> What is The Time Now </a>
-        </ul>
-        
-    </li>
-    -->
+    
         <div class="container">
 
       <div class="masthead">
         <h3 class="text-muted">Dot Document Tracking</h3>
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
-          <li><a href="createemployee">Employee</a></li>
-          <li><a href="Employee">Department</a></li>
+          <li><a href="Employeeform">Employee</a></li>
+          <li><a href="#">Department</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>

@@ -4,6 +4,11 @@
  */
 package com.wandile.documenttracking.client.webservice.rest.controllers;
 
+import com.wandile.documenttracking.client.webservice.rest.resources.EmployeeResources;
+import com.wandile.documenttracking.domain.Employee;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("employeeapi")
 public class EmployeeRestController {
     
-   /* @Autowired
-    public  List<EmployeeResources> getEmployee(){
+    //@Autowired
+    /*public  List<EmployeeResources> getEmployee(){
         
     private List<Employee> employee =  employeeService.findAll();
     
