@@ -5,11 +5,11 @@
     
     
     <div class="masthead">
-        <h3 class="text-muted">Dot Document Tracking</h3>
+        <h3 class="text-muted">Employee Page</h3>
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
-          <li><a href="Employee">Employee</a></li>
-          <li><a href="#">Submission</a></li>
+          <li><a href="#">Employee</a></li>
+          <li><a href="ListEmployee">List</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
