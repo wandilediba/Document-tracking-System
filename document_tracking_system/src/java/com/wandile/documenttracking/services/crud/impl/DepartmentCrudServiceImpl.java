@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author DibaW
  */
-@Service("DepartmentCrudService")
+@Service("departmentCrudService")
 @Transactional
 public class DepartmentCrudServiceImpl implements DepartmentCrudService{
     

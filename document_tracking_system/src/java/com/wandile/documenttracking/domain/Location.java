@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -26,9 +27,22 @@ public class Location implements Serializable {
     String Building;
     String office;
     
+    @OneToOne
+    private Location location;
+    
     @ManyToOne
     Document document;
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    
+    
     public String getCity() {
         return City;
     }

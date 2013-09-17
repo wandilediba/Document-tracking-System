@@ -60,12 +60,12 @@ public class DepartmentTest {
     public void createDepartment(){
         
         Map<String, String> values = new HashMap<String, String>();
-        values.put("name", "Intergrated Transport Planning");
-        values.put("abreviation","ITP");
+        values.put("name", "Aviation");
+        values.put("abreviation","A");
       
-        Department department = DepartmentFactory.createDepartment(values, 101);
+        Department department = DepartmentFactory.createDepartment(values, 104);
         
-        departmentCrudService = (DepartmentCrudService) ctx.getBean("DepartmentCrudService");
+        departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
         departmentCrudService.persist(department);
         id = department.getId();
         
@@ -75,6 +75,7 @@ public class DepartmentTest {
     
     @Test
     public void readDepartment(){
+        
         departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
         Department D = departmentCrudService.findById(id);
         Assert.assertNotNull(D);   
@@ -85,10 +86,10 @@ public class DepartmentTest {
     public void updateDepartment() {
         departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
         Department k = departmentCrudService.findById(id);
-        k.setDeptid(100);
+        k.setDeptid(103);
         departmentCrudService.merge(k);
         Department update = departmentCrudService.findById(id);
-        Assert.assertEquals(update.getDeptid(), "200");
+        Assert.assertEquals(update.getDeptid(), "103");
         
         
     }

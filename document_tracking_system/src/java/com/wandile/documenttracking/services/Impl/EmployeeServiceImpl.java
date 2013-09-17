@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public List<Employee> createEmployee(EmployeeModel model) {
-         // DONT DO THIS USE FACTORY
+         
        
          Map<String, String> details = new HashMap<String, String>();      
          int empid = 0;
@@ -94,4 +94,3 @@ public class EmployeeServiceImpl implements EmployeeService{
         }
 }
     
-

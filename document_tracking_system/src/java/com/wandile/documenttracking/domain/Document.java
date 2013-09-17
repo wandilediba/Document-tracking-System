@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -28,7 +29,18 @@ public class Document implements Serializable {
     @Embedded
     private Document_info docInfo;
     
+    @ManyToOne
+    private Submission submission;
+
+    public Submission getSubmission() {
+        return submission;
+    }
+
+    public void setSubmission(Submission submission) {
+        this.submission = submission;
+    }
    
+    
 
     public int getDocId() {
         return docId;

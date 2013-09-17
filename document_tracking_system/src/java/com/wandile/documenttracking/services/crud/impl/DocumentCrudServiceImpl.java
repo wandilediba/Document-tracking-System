@@ -16,11 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author DibaW
  */
-
-@Service("DocumentCrudService")
+@Service("documentCrudService")
 @Transactional
-public class DocumentCrudServiceImpl implements  DocumentCrudService{
-    
+public class DocumentCrudServiceImpl implements DocumentCrudService {
+
     @Autowired
     private GenericDAO<Document> dao;
     

@@ -30,9 +30,27 @@ public class Department implements Serializable {
     
     private int deptid;
     
+    @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    @JoinColumn(name="sub_id")
+    private List<Submission> submission; 
+    
+    @OneToMany(cascade= CascadeType.ALL)
+    @JoinColumn(name="empid")
+    private List<Employee> employee = new ArrayList<Employee>();
+    
    @Embedded
     DeptInfo deptInfo;
 
+    public List<Submission> getSubmission() {
+        return submission;
+    }
+
+    public void setSubmission(List<Submission> submission) {
+        this.submission = submission;
+    }
+
+    
+       
     public DeptInfo getDeptInfo() {
         return deptInfo;
     }
@@ -40,14 +58,6 @@ public class Department implements Serializable {
     public void setDeptInfo(DeptInfo deptInfo) {
         this.deptInfo = deptInfo;
     }
-
-   
-
-    
-    
-    @OneToMany(cascade= CascadeType.ALL)
-    @JoinColumn(name="empid")
-    private List<Employee> employee = new ArrayList<Employee>();
 
     public int getDeptid() {
         return deptid;
