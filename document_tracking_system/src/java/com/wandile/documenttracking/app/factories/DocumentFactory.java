@@ -6,6 +6,7 @@ package com.wandile.documenttracking.app.factories;
 
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Document_info;
+import com.wandile.documenttracking.domain.Submission;
 
 /**
  *
@@ -18,6 +19,7 @@ public class DocumentFactory {
         document.setDocId(docId);
         document.setStatus(status);
         document.setDocInfo(docinfo);
+        
         //document.setEmployee(emp);
         
         return document;

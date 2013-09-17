@@ -11,25 +11,52 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
  * @author 209043946
  */
-@Controller
-@RequestMapping("employeeapi")
+ //@ResponseBody
+ @RequestMapping(value = "employee", method = RequestMethod.GET)
 public class EmployeeRestController {
     
-    //@Autowired
-    /*public  List<EmployeeResources> getEmployee(){
+   // public  List<EmployeeResources> getEmployee(){
         
-    private List<Employee> employee =  employeeService.findAll();
+    /*List<Employee> employee =  employeeService.findAll();
     
-    List<EmployeeResources> rs = new ArrayList<EmployeeResource>();
+    List<EmployeeResources> rs = (List<EmployeeResources>) new ArrayList<EmployeeResources>();
+    
     for(Employee employee: employees){
-       EmployeeResource emp = new EmployeeResource();
-       emp.setEmployeeName(employee.getEmployeeName())
+       List<EmployeeResources> emp = new ArrayList< EmployeeResources>();
+       emp.setEmployeeName(employee.getEmployeeName());
+       emp.setContact(employee.getContact());
+       emp.setDepartment(employee.)
+       rs.add(emp);   
+       }
+       
+       return rs;
+       
+       /* @ResponseBody
+    @RequestMapping(value = "tournaments", method = RequestMethod.GET)   
+    public List<TournamentResource> getTournaments(){
+        return null;
+        /*List<Tournament> tournaments = tournamentService.findAll();
+        List<TournamentResource> tr = new ArrayList<TournamentResource>();
+        for(Tournament tournament:tournaments){
+            TournamentResource t = new TournamentResource();
+            t.setName(tournament.getName());
+            t.setTournamentNumber(tournament.getTournamentNumber());
+            t.setVenue(tournament.getVenue());
+            t.setSponsor(tournament.getSponsor());
+            t.setId(tournament.getId());
+            t.setResults(tournament.getResults());
+            t.setReferee(tournament.getReferee());
+            tr.add(t);
+        }*/
+       
     
-     }*/
+     }
     
-}
+

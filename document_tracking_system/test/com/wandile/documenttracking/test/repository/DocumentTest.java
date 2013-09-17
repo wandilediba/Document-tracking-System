@@ -6,9 +6,12 @@ package com.wandile.documenttracking.test.repository;
 
 import com.wandile.documenttracking.app.factories.DocInfoFactory;
 import com.wandile.documenttracking.app.factories.DocumentFactory;
+import com.wandile.documenttracking.app.factories.SubmissionFactory;
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Document_info;
 import com.wandile.documenttracking.services.crud.DocumentCrudService;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -60,19 +63,21 @@ public class DocumentTest {
     public void tearDownMethod() throws Exception {
     }
     
-    @Test
+   @Test
     public void createDocument(){
         Map<String, String> values = new HashMap<String, String>();
         
-        values.put("Subject","Aviation Law amedment");
-        values.put("Author", "Mr Makonyane David");
+        values.put("Subject","Rail Transport");
+        values.put("Author", "Mr Fasi");
         Date signedDate = new DateTime(2013, 02, 05, 0, 0).toDate();
         
         Document_info doc = DocInfoFactory.createDocFactory(values, signedDate);
+       
         
-        Document document = DocumentFactory.createDocument(doc, 100, "Pending");
         
-        documentCrudService = (DocumentCrudService) ctx.getBean("DocumentCrudService");
+        Document document = DocumentFactory.createDocument(doc, 103, "NCOP");
+        
+        documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
         documentCrudService.persist(document);
         id = document.getId();
         
@@ -80,15 +85,18 @@ public class DocumentTest {
         
     }
     
-    @Test
+   @Test
     public void readDocument (){
+       long num = 5;
         documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
-        Document D = documentCrudService.findById(id);
+        Document D = documentCrudService.findById(num);
+        
+        
         Assert.assertNotNull(D);   
         
     }
     
-     @Test(dependsOnMethods ="readDocument" )
+   @Test(dependsOnMethods ="readDocument" )
     public void updateDocument() {
         documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
         Document k = documentCrudService.findById(id);
@@ -100,7 +108,7 @@ public class DocumentTest {
         
     }
      
-    @Test(dependsOnMethods ="readDocument" )
+   @Test(dependsOnMethods ="readDocument" )
     public void deleteSubmission() {
         documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
         Document k = documentCrudService.findById(id);

@@ -64,15 +64,15 @@ public class SubmissionTest {
         
         Map<String, String> values = new HashMap<String, String>();
         Date subDate = new DateTime(2013, 05, 26, 0, 0).toDate();
-        values.put("JobTitle", "Dirctor General");
+        values.put("JobTitle", "DDG");
         
         SingnedBy sin = SignedByFactory.createSignedBy(values, subDate);
         
         //Location loc = LocationFactory.createLocation("CapeTown", "120 Plein ", "1350");
         
-        Submission sub = SubmissionFactory.createSubmission(sin, "Aviation Law", "pending", 101);
+        Submission sub = SubmissionFactory.createSubmission(sin, "Transport Law", "pending", 102);
         
-        submissionCrudService = (SubmissionCrudService) ctx.getBean("SubmissionCrudService");
+        submissionCrudService = (SubmissionCrudService) ctx.getBean("submissionCrudService");
         submissionCrudService.persist(sub);
         id = sub.getId();
         

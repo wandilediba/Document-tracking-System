@@ -11,6 +11,6 @@ import com.wandile.documenttracking.services.Service;
  *
  * @author DibaW
  */
-public interface DocumentCrudService  extends Service<Document, Long>{
+public interface DocumentCrudService extends Service <Document, Long>{
     
 }

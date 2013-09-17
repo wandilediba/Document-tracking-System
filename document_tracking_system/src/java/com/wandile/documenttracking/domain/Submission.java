@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -29,20 +30,42 @@ public class Submission implements Serializable {
     private int submissionId;
     private String description;
     private String status;
+    
+    @ManyToOne
+    private Department department;
+    
+    
+     @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    @JoinColumn(name="docid")
+    private List<Document> document;
 
-    public Document getDocument() {
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+     
+     
+    public List<Document> getDocument() {
         return document;
     }
 
-    public void setDocument(Document document) {
+    public void setDocument(List<Document> document) {
         this.document = document;
     }
     
-    @ManyToOne
-    Document document;
+    
+    
+    
+    
     @OneToMany(cascade = CascadeType.ALL)
     private List<SingnedBy> singnedby = new ArrayList<SingnedBy>();
 
+    
+    
     public int getSubmissionId() {
         return submissionId;
     }

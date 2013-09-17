@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author DibaW
  */
-@Service("EmployeeCrudService")
+@Service("employeeCrudService")
 @Transactional
 public class EmployeeCrudServiceImpl implements EmployeeCrudService{
     
@@ -77,6 +77,7 @@ public class EmployeeCrudServiceImpl implements EmployeeCrudService{
         setDao(dao);
         return dao.count();
     }
+    
     @Override
     public Employee getByPropertyName(String name, String value) {
         setDao(dao);

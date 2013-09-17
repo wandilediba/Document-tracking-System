@@ -59,7 +59,7 @@ public class LocationTest {
         
          
         Location loc = LocationFactory.createLocation( "CapeTown", "120 Plein", "1350" );
-        locationCrudService = (LocationCrudService) ctx.getBean("LocationCrudService");
+        locationCrudService = (LocationCrudService) ctx.getBean("locationCrudService");
         locationCrudService.persist(loc);
         id = loc.getId();
         
@@ -78,10 +78,10 @@ public class LocationTest {
     public void updateLocation() {
         locationCrudService = (LocationCrudService) ctx.getBean("locationCrudService");
         Location k = locationCrudService.findById(id);
-        k.setOffice("123");
+        k.setId(id);
         locationCrudService.merge(k);
         Location update = locationCrudService.findById(id);
-        Assert.assertEquals(update.getOffice(), "1118");
+        Assert.assertEquals(update.getOffice(), id);
         
         
     }
