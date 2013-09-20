@@ -18,6 +18,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.joda.time.DateTime;
+import org.springframework.beans.factory.annotation.Autowire;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service("EmployeeService")
 public class EmployeeServiceImpl implements EmployeeService{
     
-    
+    @Autowired
     private EmployeeCrudService employeeCrudService;
 
     @Override

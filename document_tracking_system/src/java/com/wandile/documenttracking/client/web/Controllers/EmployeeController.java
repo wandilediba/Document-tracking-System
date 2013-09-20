@@ -61,7 +61,9 @@ public class EmployeeController {
 
     @RequestMapping(value = "/ListEmployee", method = RequestMethod.GET)
     public String getEmployee(Model model) {
+        System.out.println("service"+ employeeService);
        List<Employee> employees = employeeService.getEmployee();
+       
         model.addAttribute("employees", employees);
         return "Employee/listEmployees";
     }
