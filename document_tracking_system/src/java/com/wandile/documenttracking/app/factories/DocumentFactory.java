@@ -6,7 +6,8 @@ package com.wandile.documenttracking.app.factories;
 
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Document_info;
-import com.wandile.documenttracking.domain.Submission;
+import java.util.Date;
+import java.util.Map;
 
 /**
  *
@@ -14,10 +15,15 @@ import com.wandile.documenttracking.domain.Submission;
  */
 public class DocumentFactory {
     
-    public static Document createDocument(Document_info docinfo, int docId, String status) {
+    public static Document createDocument(Document_info docinfo, Map<String, String> values) {
+        //Document_info document_info = DocInfoFactory.createDocFactory(values, dueDate);
+        
         Document document = new Document();
-        document.setDocId(docId);
-        document.setStatus(status);
+        //document.setDocId(docId);
+        //document.setDocId(docId);
+        document.setStatus(values.get("status"));
+        document.setDocNumber(values.get("docNumber"));
+        
         document.setDocInfo(docinfo);
         
         //document.setEmployee(emp);

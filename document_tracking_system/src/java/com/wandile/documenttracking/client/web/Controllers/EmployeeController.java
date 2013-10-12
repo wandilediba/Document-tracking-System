@@ -9,6 +9,7 @@ import com.wandile.documenttracking.client.web.model.EmployeeModel;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.services.EmployeeService;
 import java.util.List;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,7 +46,7 @@ public class EmployeeController {
     @RequestMapping(value = "/createemployee", method = RequestMethod.POST)
     public String createEmployee(@ModelAttribute("employeeModel")  @Validated EmployeeModel employee,
             BindingResult result, Model model) {
-           employeeService.createEmployee(employee);
+           employeeService.createEmployees(employee);
 
         List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
@@ -59,7 +60,7 @@ public class EmployeeController {
         return "Employee/form";
     }
 
-    @RequestMapping(value = "/ListEmployee", method = RequestMethod.GET)
+    @RequestMapping(value = "/employees", method = RequestMethod.GET)
     public String getEmployee(Model model) {
         System.out.println("service"+ employeeService);
        List<Employee> employees = employeeService.getEmployee();
@@ -80,7 +81,7 @@ public class EmployeeController {
         employeeService.deleteEmployee(emp_id);
         List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
-        return "Employee/Employees";
+        return "Employee/listEmployees";
     }
 
     @RequestMapping(value = "private/editEmployeeForm.html", method = RequestMethod.GET, params = {"emp_id"})

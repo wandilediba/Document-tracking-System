@@ -16,7 +16,7 @@ public class NameFactory {
     public static Name createName(Map<String, String> values) {
         Name name = new Name();
         name.setLname(values.get("LName"));
-        name.setFname(values.get("Fname"));        
+        name.setFname(values.get("FName"));        
         return name;
     }
 }

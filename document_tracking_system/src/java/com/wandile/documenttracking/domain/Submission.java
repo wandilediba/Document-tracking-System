@@ -26,27 +26,42 @@ public class Submission implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    private int submissionId;
+   
     private String description;
     private String status;
     
-    @ManyToOne
-    private Department department;
+    /*@OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    private SingnedBy singned;*/
+    
+     @OneToMany(cascade = CascadeType.ALL)
+    private List<SingnedBy> singnedby = new ArrayList<SingnedBy>();
+
+    
+    //@OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    //@JoinColumn(name="deptid")
+    //private List<Department> department;
     
     
-     @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
     @JoinColumn(name="docid")
     private List<Document> document;
 
-    public Department getDepartment() {
-        return department;
+    /*public List<Department> getDepartment() {
+    return department;
+    }
+    public void setDepartment(List<Department> department) {
+    this.department = department;
+    }*/
+    /*public SingnedBy getSingned() {
+        return singned;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
+    public void setSingned(SingnedBy singned) {
+        this.singned = singned;
+    }*/
+    
 
+    
      
      
     public List<Document> getDocument() {
@@ -56,23 +71,15 @@ public class Submission implements Serializable {
     public void setDocument(List<Document> document) {
         this.document = document;
     }
+       
     
-    
-    
-    
-    
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<SingnedBy> singnedby = new ArrayList<SingnedBy>();
-
-    
-    
-    public int getSubmissionId() {
+    /*public int getSubmissionId() {
         return submissionId;
     }
 
     public void setSubmissionId(int submissionId) {
         this.submissionId = submissionId;
-    }
+    }*/
 
     public String getDescription() {
         return description;

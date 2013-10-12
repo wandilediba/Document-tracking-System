@@ -29,10 +29,11 @@
         <tbody>
             <c:forEach var="employee" items="${employees}">
                 <tr>
-                    <td>${employees.fname}</td>
-                    <td>${employees.lname} </td>
-                    <td><a> Edit </a></td>
-                    <td><a> Delete </a></td>
+                    <td>${employee.id}</td>
+                    <td>${employee.name.fname}</td>
+                    <td>${employee.name.lname} </td>
+                    <td><a href="editemployee?id=${employee.id}"> Edit </a></td>
+                    <td><a href="deleteemployee?emp_id=${employee.id}"> Delete </a></td>
                 </tr>
 
             </c:forEach>

@@ -6,8 +6,11 @@ package com.wandile.documenttracking.test.repository;
 
 import com.wandile.documenttracking.app.factories.DepartmentFactory;
 import com.wandile.documenttracking.domain.Department;
+import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.services.crud.DepartmentCrudService;
+import com.wandile.documenttracking.services.crud.EmployeeCrudService;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -25,6 +28,7 @@ import org.testng.annotations.Test;
 public class DepartmentTest {
     
     private DepartmentCrudService departmentCrudService;
+    private EmployeeCrudService employeeCrudService;
      
     private Long id;
     private static ApplicationContext ctx;
@@ -50,6 +54,8 @@ public class DepartmentTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
+        departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
+        employeeCrudService = (EmployeeCrudService)ctx.getBean("employeeCrudService");
     }
 
     @AfterMethod
@@ -60,18 +66,49 @@ public class DepartmentTest {
     public void createDepartment(){
         
         Map<String, String> values = new HashMap<String, String>();
-        values.put("name", "Aviation");
-        values.put("abreviation","A");
+        values.put("name", "Maritime");
+        values.put("abreviation","M");
+        values.put("deptNum", "DEP006");
       
-        Department department = DepartmentFactory.createDepartment(values, 104);
         
-        departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
+        List<Employee> employee = employeeCrudService.findAll();
+        Department department = DepartmentFactory.createDepartment(values, employee);
+        
+        
         departmentCrudService.persist(department);
         id = department.getId();
         
         Assert.assertNotNull(department);
                 
     }
+    
+        
+    /*@Test(dependsOnMethods="createTeam")
+    public void readTeam(){
+        Team team = teamCrudService.findById(teamID);
+        assertNotNull(team);
+    }
+    
+    @Test(dependsOnMethods="createTeam")
+    public void readTeams(){
+        List<Team> teams = teamCrudService.findAll();
+        assertFalse(teams.isEmpty());
+    }
+    
+    @Test(dependsOnMethods="createTeam")
+    public void updateTeam(){
+        Team team = teamCrudService.findById(teamID);
+        team.setTeamNumber("TM1235");
+        teamCrudService.merge(team);
+        Team team1 = teamCrudService.findById(teamID);
+        assertEquals(team1.getTeamNumber(), "TM1235");
+    }
+    
+    @Test(dependsOnMethods="readTeam")
+    public void deleteTeam(){
+        Team team = teamCrudService.findById(teamID);
+        teamCrudService.removeById(team.getId());
+    }*/ 
     
     @Test
     public void readDepartment(){
@@ -82,14 +119,14 @@ public class DepartmentTest {
         
     }
     
-     @Test(dependsOnMethods ="readDepartment" )
+    @Test(dependsOnMethods ="readDepartment" )
     public void updateDepartment() {
         departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
         Department k = departmentCrudService.findById(id);
-        k.setDeptid(103);
+        k.setId(id);
         departmentCrudService.merge(k);
         Department update = departmentCrudService.findById(id);
-        Assert.assertEquals(update.getDeptid(), "103");
+        Assert.assertEquals(update.getDeptnumber(), "DEP006");
         
         
     }
@@ -97,7 +134,7 @@ public class DepartmentTest {
         
     
     
-     @Test(dependsOnMethods ="readDepartment" )
+    @Test(dependsOnMethods ="readDepartment" )
     public void deleteDepartment() {
         departmentCrudService = (DepartmentCrudService) ctx.getBean("departmentCrudService");
         Department k = departmentCrudService.findById(id);

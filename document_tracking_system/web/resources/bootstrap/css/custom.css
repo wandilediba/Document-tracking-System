@@ -76,11 +76,17 @@ body {
   }
 }
 #content{
-    
-    align: center;
-    width: 800px;
+    float: left;
+    padding-top: 20px;
+    width: 600px;
     height: 800px;
     padding : 20px;
+}
+#sidemenu
+{
+    padding-top: 20px;
+    width: 200px;
+    float: right;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

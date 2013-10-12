@@ -3,7 +3,7 @@
 <body>
     
         <div class="container">
-
+   <div id="menu">
       <div class="masthead">
         <h3 class="text-muted">Dot Document Tracking</h3>
         <ul class="nav nav-justified">
@@ -15,7 +15,8 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
-
+   </div>
+            <div id="content">        
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1>Document Tracking</h1>
@@ -40,8 +41,25 @@
           <p><a class="btn btn-primary" href="#">View Tips &raquo;</a></p>
         </div>
       </div>
-
-      
+   </div>
+        <div id="sidemenu">
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header"> PDF Report</li>
+              <li><a href="ReportDept.aspx">HR Report</a></li>
+              <li class="nav-header">Asset Report</li>
+              <li><a href="Default.aspx">Search for asset</a></li>
+              <li class="nav-header">Department Reports</li>
+              <li><a href="Crud.aspx">Assert Report</a></li>
+              <li><a href="#">Total Assets</a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+           
+        </div>
 
     </div> <!-- /container -->
 

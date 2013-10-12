@@ -29,19 +29,18 @@ public class Employee implements Serializable {
     @Embedded
     private Contact contact;
     
-    @OneToOne
-    private Department  department;
+   
     
-    private int emp_id;
+    private String employeeNumber;
     
 
-    public Department getDepartment() {
+   /* public Department getDepartment() {
         return department;
     }
 
     public void setDepartment(Department department) {
         this.department = department;
-    }
+    }*/
     
     
 
@@ -63,15 +62,15 @@ public class Employee implements Serializable {
         this.contact = contact;
     }
 
+    public String getEmployeeNumber() {
+        return employeeNumber;
+    }
+
+    public void setEmployeeNumber(String employeeNumber) {
+        this.employeeNumber = employeeNumber;
+    }
+
     
-
-    public int getEmp_id() {
-        return emp_id;
-    }
-
-    public void setEmp_id(int emp_id) {
-        this.emp_id = emp_id;
-    }
 
     
     
