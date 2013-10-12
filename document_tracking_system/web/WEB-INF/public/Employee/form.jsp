@@ -9,7 +9,7 @@
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
           <li><a href="#">Employee</a></li>
-          <li><a href="ListEmployee">List</a></li>
+          <li><a href="employees">List</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
@@ -24,37 +24,37 @@
                     <div class="controls">
                        
                          
-                                <f:input path="Name.fname" type="text" id="Name.fname" placeholder="Name"/>
+                                <f:input path="nameModel.fname" type="text" id="fname" placeholder="Name"/>
                          </div>
           </div>
      <p></p>
              <div class="control-group warning" >
                    <div class="controls">
-                        <f:input path="Name.lname" type="text" id="lname" placeholder="Surname" />
+                        <f:input path="nameModel.lname" type="text" id="lname" placeholder="Surname" />
                    </div>
              </div>
       <p></p>
              <div class="control-group warning" >
                    <div class="controls">
-                        <f:input path="Contact.tel" type="text" id="tel" placeholder="Telephone" />
+                        <f:input path="contactModel.tel" type="text" id="tel" placeholder="Telephone" />
                    </div>
              </div>      
            <p></p>
              <div class="control-group warning" >
                    <div class="controls">
-                        <f:input path="Contact.fax" type="text" id="fax" placeholder="Fax" />
+                        <f:input path="contactModel.fax" type="text" id="fax" placeholder="Fax" />
                    </div>
              </div>  
              <p></p>
              <div class="control-group warning" >
                    <div class="controls">
-                        <f:input path="emp_id" type="text" id="empid" placeholder="Employee ID" />
+                    <!--    f:input path="emp_id" type="text" id="empid" placeholder="Employee ID" />-->
                    </div>
              </div> 
                     <p></p>
              <div class="control-group warning" >
                    <div class="controls">
-                        <f:input path="Contact.email" type="text" id="email" placeholder="E-Mail" />
+                        <f:input path="contactModel.email" type="text" id="email" placeholder="E-Mail" />
                    </div>
              </div>     
       

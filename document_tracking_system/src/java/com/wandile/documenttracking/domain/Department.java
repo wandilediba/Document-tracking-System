@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -28,25 +29,27 @@ public class Department implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private int deptid;
+    private String deptnumber;
     
-    @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+   /* @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
     @JoinColumn(name="sub_id")
-    private List<Submission> submission; 
+    private List<Submission> submission; */
     
     @OneToMany(cascade= CascadeType.ALL)
-    @JoinColumn(name="empid")
+    @JoinColumn(name="emp_id")
     private List<Employee> employee = new ArrayList<Employee>();
     
-   @Embedded
+    @Embedded
     DeptInfo deptInfo;
 
-    public List<Submission> getSubmission() {
-        return submission;
+
+
+    public String getDeptnumber() {
+        return deptnumber;
     }
 
-    public void setSubmission(List<Submission> submission) {
-        this.submission = submission;
+    public void setDeptnumber(String deptnumber) {
+        this.deptnumber = deptnumber;
     }
 
     
@@ -59,13 +62,6 @@ public class Department implements Serializable {
         this.deptInfo = deptInfo;
     }
 
-    public int getDeptid() {
-        return deptid;
-    }
-
-    public void setDeptid(int deptid) {
-        this.deptid = deptid;
-    }
 
       
 

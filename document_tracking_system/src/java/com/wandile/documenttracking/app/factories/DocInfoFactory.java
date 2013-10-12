@@ -16,9 +16,11 @@ public class DocInfoFactory {
     
     public static Document_info createDocFactory(Map<String, String> values,Date duedate) {
         Document_info docInfo = new Document_info();
+        
         docInfo.setAuthor(values.get("Author"));
-         docInfo.setSubject(values.get("subject"));  
-          docInfo.setDuedate(duedate);
+        docInfo.setSubject(values.get("Subject")); 
+         
+        docInfo.setDuedate(duedate);
         return docInfo;
     }
     

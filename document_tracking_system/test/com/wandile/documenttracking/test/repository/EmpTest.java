@@ -48,6 +48,7 @@ public class EmpTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
+        employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
     }
 
     @AfterMethod
@@ -59,8 +60,8 @@ public class EmpTest {
           
         Map<String, String> details = new HashMap<String, String>();
         //Name
-        details.put("fname", "Zama");
-        details.put("lname", "Shange");
+        details.put("FName", "Zama");
+        details.put("LName", "Shange");
         //Name name = NameFactory.createName(details);
         
        // Contact
@@ -69,10 +70,12 @@ public class EmpTest {
         details.put("email", "zamzam@gmail.com");
         //Contact cont = ContactFactory.createContact(details);
         
+        details.put("empNumber", "EMP005");
         
         
-        Employee Aj = EmployeeFactory.createEmployee( details,  1121);
-        employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
+        
+        Employee Aj = EmployeeFactory.createEmployee(details);
+        
         employeeCrudService.persist(Aj);
         id = Aj.getId();
         
@@ -87,18 +90,18 @@ public class EmpTest {
         
     }
     
-     @Test(dependsOnMethods ="createEmployee" )
+    @Test(dependsOnMethods ="readEmployee" )
     public void updateEmployee() {
         employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
          System.out.println(id);
         Employee k = employeeCrudService.findById(id);
-        k.setEmp_id(1121);
+        k.setId(id);
         employeeCrudService.merge(k);
         Employee update = employeeCrudService.findById(id);
-        Assert.assertEquals(update.getEmp_id(),1121);        
+        Assert.assertEquals(update.getEmployeeNumber(),1121);        
     }
     
-   //  @Test(dependsOnMethods ="readEmployee" )
+    @Test(dependsOnMethods ="readEmployee")
     public void deleteEmployee() {
         employeeCrudService = (EmployeeCrudService) ctx.getBean("employeeCrudService");
         Employee k = employeeCrudService.findById(id);

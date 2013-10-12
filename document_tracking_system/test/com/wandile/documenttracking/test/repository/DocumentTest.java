@@ -9,6 +9,7 @@ import com.wandile.documenttracking.app.factories.DocumentFactory;
 import com.wandile.documenttracking.app.factories.SubmissionFactory;
 import com.wandile.documenttracking.domain.Document;
 import com.wandile.documenttracking.domain.Document_info;
+import com.wandile.documenttracking.services.crud.DocInfoCrudService;
 import com.wandile.documenttracking.services.crud.DocumentCrudService;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ import org.testng.annotations.Test;
 public class DocumentTest {
     
     private DocumentCrudService documentCrudService;
+    private DocInfoCrudService docInfoCrudService;
      
     private Long id;
     private static ApplicationContext ctx;
@@ -57,6 +59,8 @@ public class DocumentTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
+        documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
+        docInfoCrudService = (DocInfoCrudService) ctx.getBean("docInfoCrudService");
     }
 
     @AfterMethod
@@ -67,17 +71,17 @@ public class DocumentTest {
     public void createDocument(){
         Map<String, String> values = new HashMap<String, String>();
         
-        values.put("Subject","Rail Transport");
-        values.put("Author", "Mr Fasi");
+        values.put("Subject","Toll Roads");
+        values.put("Author", "Mr Masombuka");
         Date signedDate = new DateTime(2013, 02, 05, 0, 0).toDate();
         
         Document_info doc = DocInfoFactory.createDocFactory(values, signedDate);
-       
+       //doc = docInfoCrudService.findById(id);
+        values.put("status", "Commitee");
+        values.put("docNumber", "DOC001");
+        Document document = DocumentFactory.createDocument(doc, values);
         
-        
-        Document document = DocumentFactory.createDocument(doc, 103, "NCOP");
-        
-        documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
+        //documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
         documentCrudService.persist(document);
         id = document.getId();
         
@@ -87,9 +91,9 @@ public class DocumentTest {
     
    @Test
     public void readDocument (){
-       long num = 5;
+      
         documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
-        Document D = documentCrudService.findById(num);
+        Document D = documentCrudService.findById(id);
         
         
         Assert.assertNotNull(D);   
@@ -100,15 +104,15 @@ public class DocumentTest {
     public void updateDocument() {
         documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
         Document k = documentCrudService.findById(id);
-        k.setDocId(100);
+        k.setDocNumber("DOC005");
         documentCrudService.merge(k);
         Document update = documentCrudService.findById(id);
-        Assert.assertEquals(update.getDocId(), "200");
+        Assert.assertEquals(update.getDocNumber(), "DOC005");
         
         
     }
      
-   @Test(dependsOnMethods ="readDocument" )
+    @Test(dependsOnMethods ="readDocument" )
     public void deleteSubmission() {
         documentCrudService = (DocumentCrudService) ctx.getBean("documentCrudService");
         Document k = documentCrudService.findById(id);

@@ -4,57 +4,56 @@
  */
 package com.wandile.documenttracking.services.crud.impl;
 
-import com.wandile.documenttracking.domain.Contact;
+import com.wandile.documenttracking.domain.SingnedBy;
 import com.wandile.documenttracking.repository.GenericDAO;
-import com.wandile.documenttracking.services.crud.ContactCrudService;
+import com.wandile.documenttracking.services.crud.SingnedByCrudService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author DibaW
  */
-@Service("ContactCrudService")
-@Transactional
-public class ContactCrudServiceImpl implements ContactCrudService {
+@Service("singnedByCrudService")
+public class SingnedByCrudServiceImpl implements SingnedByCrudService{
     
     @Autowired
-    private GenericDAO<Contact> dao;
+    private GenericDAO<SingnedBy> dao;
     
-     public final void setDao(final GenericDAO<Contact> daoToSet) {
+     public final void setDao(final GenericDAO< SingnedBy> daoToSet) {
         this.dao = daoToSet;
-        this.dao.setClazz(Contact.class);
+        this.dao.setClazz(SingnedBy.class);
     }
 
-    public ContactCrudServiceImpl() {
+    public SingnedByCrudServiceImpl() {
     }
+    
     @Override
-    public Contact findById(Long id) {
+    public SingnedBy findById(Long id) {
         setDao(dao);
         return dao.findById(id);
     }
     @Override
-    public List<Contact> findAll() {
+    public List<SingnedBy> findAll() {
         setDao(dao);
         return dao.findAll();
     }
 
     @Override
-    public void persist(Contact entity) {
+    public void persist(SingnedBy entity) {
         setDao(dao);
         dao.persist(entity);
     }
 
     @Override
-    public void merge(Contact entity) {
+    public void merge(SingnedBy entity) {
         setDao(dao);
         dao.merge(entity);
     }
 
     @Override
-    public void remove(Contact entity) {
+    public void remove(SingnedBy entity) {
         setDao(dao);
         dao.remove(entity);
     }
@@ -62,12 +61,12 @@ public class ContactCrudServiceImpl implements ContactCrudService {
     @Override
     public void removeById(Long entityId) {
         setDao(dao);
-        Contact v = dao.findById(entityId);
+        SingnedBy v = dao.findById(entityId);
         dao.remove(v);
     }
 
     @Override
-    public List<Contact> findInRange(int firstResult, int maxResults) {
+    public List<SingnedBy> findInRange(int firstResult, int maxResults) {
         setDao(dao);
         return dao.findInRange(firstResult, maxResults);
 
@@ -78,13 +77,13 @@ public class ContactCrudServiceImpl implements ContactCrudService {
         return dao.count();
     }
     @Override
-    public Contact getByPropertyName(String name, String value) {
+    public SingnedBy getByPropertyName(String name, String value) {
         setDao(dao);
         return dao.getByPropertyName(name, value);
     }
 
     @Override
-    public List<Contact> getEntitiesByProperName(String name, String value) {
+    public List<SingnedBy> getEntitiesByProperName(String name, String value) {
         setDao(dao);
         return dao.getEntitiesByProperName(name, value);
 

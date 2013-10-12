@@ -6,6 +6,9 @@ package com.wandile.documenttracking.app.factories;
 
 import com.wandile.documenttracking.domain.Department;
 import com.wandile.documenttracking.domain.DeptInfo;
+import com.wandile.documenttracking.domain.Employee;
+import com.wandile.documenttracking.domain.Submission;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,18 +17,25 @@ import java.util.Map;
  */
 public class DepartmentFactory {
     
-    public static Department createDepartment(Map<String, String> details, int deptid){
+    public static Department createDepartment(Map<String, String> details, List<Employee> employees){
         
         Department dept = new Department();
-        dept.setDeptid(deptid);
+        //dept.setDeptid(deptid);
         
-        details.get("name");
-        details.get("abreviation");
+        DeptInfo deptInfo = DeptInfoFactory.createDeptInfo(details);
+        dept.setDeptInfo(deptInfo);
         
-       DeptInfo dept1 = DeptInfoFactory.createDeptInfo(details);
         
-        dept.setDeptInfo(dept1);
-        //dept.setEmployee(emp);
+        /*details.get("name");
+        details.get("abreviation");*/
+        
+        //DeptInfo dept1 = DeptInfoFactory.createDeptInfo(details);
+        
+        
+       
+        //dept.setDeptInfo(deptInfo);
+        dept.setEmployee(employees);
+        dept.setDeptnumber(details.get("deptNum"));
         
         return dept;
     

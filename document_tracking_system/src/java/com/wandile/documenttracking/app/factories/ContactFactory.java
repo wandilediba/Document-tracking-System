@@ -14,9 +14,9 @@ import java.util.Map;
 public class ContactFactory {
     public static Contact createContact( Map<String, String> values) {
         Contact contact = new Contact();
-        contact.setFax(values.get("Fax"));
-        contact.setTel(values.get("Tel"));
-        contact.setEmail(values.get("Email"));
+        contact.setFax(values.get("fax"));
+        contact.setTel(values.get("tel"));
+        contact.setEmail(values.get("email"));
         
         return contact;
     }

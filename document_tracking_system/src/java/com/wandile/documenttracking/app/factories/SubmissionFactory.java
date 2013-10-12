@@ -18,24 +18,30 @@ import java.util.Map;
  */
 public class SubmissionFactory {
     
-    public static Submission createSubmission(SingnedBy by,String description, String status, int id){
-        SingnedBy sub = new SingnedBy();
+    public static Submission createSubmission(List<SingnedBy> by,Map<String, String> details, List<Document> documents){
+        /*SingnedBy sub = new SingnedBy();
          sub.setJobTitle(by.getJobTitle());
          sub.setDate(by.getDate());
-         
+         details.
         /* Document docu = new Document();
          docu.setDocId(doc.getDocId());
          docu.setStatus(doc.getStatus());
-        docu.set*/
+        docu.set
          
          Submission mission = new Submission();
          mission.setDescription(description);
          mission.setStatus(status);
-         mission.setSubmissionId(id);
+       
          //mission.setSingnedby(sub);
         
-        
-         return mission;
+        */
+        Submission submission = new Submission();
+        //SingnedBy singnedBy = SignedByFactory.createSignedBy(details, signedByDate);
+        submission.setDescription(details.get("description"));
+        submission.setStatus(details.get("status"));
+        submission.setDocument(documents);
+        submission.setSingnedby(by);
+         return submission;
      }
     
 }

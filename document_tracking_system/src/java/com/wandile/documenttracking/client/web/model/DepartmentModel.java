@@ -4,11 +4,13 @@
  */
 package com.wandile.documenttracking.client.web.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DibaW
  */
-public class DepartmentModel {
+public class DepartmentModel implements Serializable {
     
     private int doc_id;
     private String status;

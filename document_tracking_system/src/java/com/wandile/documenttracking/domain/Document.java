@@ -5,6 +5,7 @@
 package com.wandile.documenttracking.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,8 +24,10 @@ public class Document implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private int docId;
+    private String docNumber;
     private String status;
+   // private String subject;
+    
     
     @Embedded
     private Document_info docInfo;
@@ -32,6 +35,10 @@ public class Document implements Serializable {
     @ManyToOne
     private Submission submission;
 
+   
+
+    
+    
     public Submission getSubmission() {
         return submission;
     }
@@ -39,15 +46,13 @@ public class Document implements Serializable {
     public void setSubmission(Submission submission) {
         this.submission = submission;
     }
-   
-    
 
-    public int getDocId() {
-        return docId;
+    public String getDocNumber() {
+        return docNumber;
     }
 
-    public void setDocId(int docId) {
-        this.docId = docId;
+    public void setDocNumber(String docNumber) {
+        this.docNumber = docNumber;
     }
 
     public String getStatus() {
