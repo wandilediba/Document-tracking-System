@@ -47,13 +47,13 @@
       <div class="row-fluid">
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"> PDF Report</li>
-              <li><a href="ReportDept.aspx">HR Report</a></li>
-              <li class="nav-header">Asset Report</li>
-              <li><a href="Default.aspx">Search for asset</a></li>
-              <li class="nav-header">Department Reports</li>
-              <li><a href="Crud.aspx">Assert Report</a></li>
-              <li><a href="#">Total Assets</a></li>
+              <li class="nav-header"> Employee</li>
+              <li><a href="#">List Employee</a></li>
+              <li class="nav-header">Department</li>
+              <li><a href="#">List Documents</a></li>
+              <li class="nav-header">Submission</li>
+              <li><a href="#">list Submission</a></li>
+              <li><a href="#">Add Submission</a></li>
             </ul>
           </div>
         </div>

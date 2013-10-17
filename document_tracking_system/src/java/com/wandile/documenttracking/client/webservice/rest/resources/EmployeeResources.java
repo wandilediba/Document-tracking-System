@@ -17,19 +17,26 @@ import javax.persistence.OneToOne;
  */
 public class EmployeeResources implements Serializable{
     
-    @Embedded
+   @Embedded
     private Name name;
     
     @Embedded
     private Contact contact;
     
-    @OneToOne
-    private Department  department;
     
-    private int emp_id;
+    
+    private String employeenumber;
 
     public Name getName() {
         return name;
+    }
+
+    public String getEmployeenumber() {
+        return employeenumber;
+    }
+
+    public void setEmployeenumber(String employeenumber) {
+        this.employeenumber = employeenumber;
     }
 
     public void setName(Name name) {
@@ -43,23 +50,6 @@ public class EmployeeResources implements Serializable{
     public void setContact(Contact contact) {
         this.contact = contact;
     }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    public int getEmp_id() {
-        return emp_id;
-    }
-
-    public void setEmp_id(int emp_id) {
-        this.emp_id = emp_id;
-    }
-    
     
     
 }
