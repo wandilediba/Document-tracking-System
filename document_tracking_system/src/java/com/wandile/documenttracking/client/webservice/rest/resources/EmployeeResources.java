@@ -10,12 +10,13 @@ import com.wandile.documenttracking.domain.Name;
 import java.io.Serializable;
 import javax.persistence.Embedded;
 import javax.persistence.OneToOne;
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  *
  * @author 209043946
  */
-public class EmployeeResources implements Serializable{
+public class EmployeeResources extends ResourceSupport{
     
    @Embedded
     private Name name;

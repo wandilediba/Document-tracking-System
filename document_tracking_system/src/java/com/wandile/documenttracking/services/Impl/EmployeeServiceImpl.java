@@ -100,5 +100,10 @@ public class EmployeeServiceImpl implements EmployeeService{
     public List<Employee> getEmployee() {
         return employeeCrudService.findAll();
         }
+
+    @Override
+    public List<Employee> findAll() {
+        return employeeCrudService.findAll();
+    }
 }
     
