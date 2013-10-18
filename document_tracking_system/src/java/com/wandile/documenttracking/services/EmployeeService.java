@@ -19,5 +19,7 @@ public interface EmployeeService {
     public EmployeeModel getEmployeeToEdit(Long id);
     public List<Employee> updateEmployee(EmployeeModel model);
     public List<Employee> getEmployee();
+
+    public List<Employee> findAll();
     
 }
