@@ -9,9 +9,10 @@
         <meta http-equiv="Cache-Control" content="no-cache"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="image/ico" rel="icon" href="<c:url value="/resources/images/favicon.ico" />" />
-        <link type="text/css" rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.css" />" />
          <link type="text/css" rel="stylesheet" href="<c:url value="/resources/bootstrap/css/custom.css" />" />
-       
+        <link type="text/css" rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap_1.css" />" />
+        <link type="text/css" rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min_1.css" />" />
+        <link type="text/css" rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.css" />" />
     </head>
     
     

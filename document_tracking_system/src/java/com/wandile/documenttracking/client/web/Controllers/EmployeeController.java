@@ -50,7 +50,7 @@ public class EmployeeController {
 
         List<Employee> employees = employeeService.getEmployee();
         model.addAttribute("employees", employees);
-        return "Employee/form";
+        return "Employee/listEmployees";
     }
 
     @RequestMapping(value = "/employeeeditform", method = RequestMethod.GET)
