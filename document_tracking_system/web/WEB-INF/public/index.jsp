@@ -1,8 +1,7 @@
 <jsp:include page="header/include.jsp" />
 
 <body>
-    
-        <div class="container">
+ <div class="container">
    <div id="menu">
       <div class="masthead">
         <h3 class="text-muted">Dot Document Tracking</h3>

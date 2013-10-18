@@ -7,6 +7,8 @@
 <jsp:include page="../header/include.jsp" />
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
  <body>
+     <div class="container">
+     
 <div class="masthead">
         <h3 class="text-muted">Employee Page</h3>
         <ul class="nav nav-justified">
@@ -19,19 +21,20 @@
         </ul>
       </div> 
     <h1>Create Employee</h1>
-   
-         <div class="control-group warning" >
+ <body>
+        
              
- <center>
+ 
                     
-          <f:form id="form" method="post" modelAttribute="employeeModel" class="form-horizontal" action="createemployee">              
-                         <div class="controls">
-                                <f:input path="nameModel.fname" type="text" id="fname" placeholder="Name"/>
-                         </div>
+          <f:form id="form" method="post" modelAttribute="employeeModel" class="form-inline" action="createemployee">              
+        <div class="span12" >          
+              <div class="input-large">
+                    <f:input path="nameModel.fname" type="text" id="fname" placeholder="Name"  />
+               </div>
           </div>
      <p></p>
-             <div class="control-group warning" >
-                   <div class="controls">
+             <div class="input-group" >
+                   <div class="input-large">
                         <f:input path="nameModel.lname" type="text" id="lname" placeholder="Surname" />
                    </div>
              </div>
@@ -61,11 +64,14 @@
              </div>     
       
        <p></p>             
-             <button type="submit" class="btn btn-success">Create Employee</button>    
+             <button type="Submit" class="btn btn-success">Submit</button>    
+             
+             <button type="Cancel" class="btn btn-success">Cancel</button>
         
           </f:form>
     </body>
-</center>
+
+ </div>
+</body>
 <jsp:include page="../footer/include.jsp" />
 
-</html>

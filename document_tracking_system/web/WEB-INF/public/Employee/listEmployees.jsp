@@ -9,14 +9,14 @@
 <jsp:include page="../header/include.jsp" />
  
 <body> 
-  <div id="container">
+  <div class="container">
    
         <div id="menu">
         <div class="masthead">
         <h3 class="text-muted">Employee Page</h3>
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
-          <li><a href="createemployee">Create</a></li>
+          <li><a href="employeeform">Create</a></li>
           <li><a href="employees">List</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
@@ -33,6 +33,9 @@
                 <th>ID</th>
                 <th>Employee Name</th>
                 <th>Employee Surname</th>
+                <th>Telephone</th>
+                <th>Fax</th>
+                <th>E-Mail</th>
                 <th>Edit 
                 <th>Delete</th>
             </tr>
@@ -44,6 +47,10 @@
                     <td>${employee.id}</td>
                     <td>${employee.name.fname}</td>
                     <td>${employee.name.lname} </td>
+                    <td>${employee.contact.tel}</td>
+                    <td>${employee.contact.fax}</td>
+                    <td>${employee.contact.email}</td>
+                    
                     <td><a href="editemployee?id=${employee.id}"> Edit </a></td>
                     <td><a href="deleteemployee?emp_id=${employee.id}"> Delete </a></td>
                 </tr>
@@ -58,13 +65,13 @@
       <div class="row-fluid">
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"> PDF Report</li>
-              <li><a href="ReportDept.aspx">HR Report</a></li>
-              <li class="nav-header">Asset Report</li>
-              <li><a href="Default.aspx">Search for asset</a></li>
-              <li class="nav-header">Department Reports</li>
-              <li><a href="Crud.aspx">Assert Report</a></li>
-              <li><a href="#">Total Assets</a></li>
+              <li class="nav-header"> Employee</li>
+              <li><a href="#">List Employee</a></li>
+              <li class="nav-header">Department</li>
+              <li><a href="#">List Documents</a></li>
+              <li class="nav-header">Submission</li>
+              <li><a href="#">list Submission</a></li>
+              <li><a href="#">Add Submission</a></li>
             </ul>
           </div>
         </div>
