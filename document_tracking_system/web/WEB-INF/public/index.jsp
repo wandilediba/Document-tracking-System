@@ -8,10 +8,10 @@
         <ul class="nav nav-justified">
           <li class="active"><a href="/document_tracking_system">Home</a></li>
           <li><a href="Employeeform">Employee</a></li>
-          <li><a href="#">Department</a></li>
+          <li><a href="Departmentform">Department</a></li>
           <li><a href="#">Document</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="Conatctform">Contact</a></li>
         </ul>
       </div>
    </div>
@@ -47,9 +47,9 @@
          <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header"> Employee</li>
-              <li><a href="#">List Employee</a></li>
+              <li><a href="employees">List Employee</a></li>
               <li class="nav-header">Department</li>
-              <li><a href="#">List Documents</a></li>
+              <li><a href="Departmentform">List Documents</a></li>
               <li class="nav-header">Submission</li>
               <li><a href="#">list Submission</a></li>
               <li><a href="#">Add Submission</a></li>

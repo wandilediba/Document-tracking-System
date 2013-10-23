@@ -4,6 +4,7 @@
  */
 package com.wandile.documenttracking.services;
 
+import com.wandile.documenttracking.client.web.model.EmpModel;
 import com.wandile.documenttracking.client.web.model.EmployeeModel;
 import com.wandile.documenttracking.domain.Employee;
 import java.util.List;
@@ -16,8 +17,8 @@ public interface EmployeeService {
     
     public List<Employee> createEmployees(EmployeeModel model);
     public List<Employee> deleteEmployee(Long id);
-    public EmployeeModel getEmployeeToEdit(Long id);
-    public List<Employee> updateEmployee(EmployeeModel model);
+    public EmpModel getEmployeeToEdit(Long id);
+    public List<Employee> updateEmployee(EmpModel model, Long id);
     public List<Employee> getEmployee();
 
     public List<Employee> findAll();

@@ -12,23 +12,23 @@ import java.io.Serializable;
  */
 public class DepartmentModel implements Serializable {
     
-    private int doc_id;
-    private String status;
+   private String deptid;
+   private DeptInfoModel deptInfoModel;
 
-    public int getDoc_id() {
-        return doc_id;
+    public String getDeptid() {
+        return deptid;
     }
 
-    public void setDoc_id(int doc_id) {
-        this.doc_id = doc_id;
+    public void setDeptid(String deptid) {
+        this.deptid = deptid;
     }
 
-    public String getStatus() {
-        return status;
+    public DeptInfoModel getDeptInfoModel() {
+        return deptInfoModel;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setDeptInfoModel(DeptInfoModel deptInfoModel) {
+        this.deptInfoModel = deptInfoModel;
     }
     
     

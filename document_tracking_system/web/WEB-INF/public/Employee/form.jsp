@@ -16,7 +16,7 @@
         </ul>
       </div> 
     <h1>Create Employee</h1>
-    <div id="content"   >
+    <div id="content"  >
     <center>
         <f:form id="form" method="post" modelAttribute="employeeModel" class="form-horizontal" action="createemployee">
                      

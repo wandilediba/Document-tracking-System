@@ -7,6 +7,7 @@ package com.wandile.documenttracking.client.web.Controllers;
 import com.wandile.documenttracking.client.web.model.DepartmentModel;
 import com.wandile.documenttracking.client.web.model.EmployeeModel;
 import com.wandile.documenttracking.domain.Employee;
+import com.wandile.documenttracking.services.DepartmentService;
 import com.wandile.documenttracking.services.EmployeeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class DepartmentController {
     
     @Autowired
-    private EmployeeService employeeService;
+    private DepartmentService departmentService;
     
     @RequestMapping(value = "/Departmentform", method = RequestMethod.GET)
     public String getDepartmentForm(Model model) {
          DepartmentModel departmentModel = new DepartmentModel();
         model.addAttribute("departmentModel", departmentModel);
-        return "Employee/department";
+        return "Department/form";
     }
 
    
