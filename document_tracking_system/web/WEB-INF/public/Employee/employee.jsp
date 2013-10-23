@@ -27,20 +27,20 @@
  
                     
           <f:form id="form" method="post" modelAttribute="employeeModel" class="form-inline" action="createemployee">              
-        <div class="span12" >          
-              <div class="input-large">
+        <div class="control-group warning" >          
+              <div class="control-group">
                     <f:input path="nameModel.fname" type="text" id="fname" placeholder="Name"  />
                </div>
           </div>
      <p></p>
-             <div class="input-group" >
-                   <div class="input-large">
+             <div class="control-group warning" >
+                   <div class="control-group">
                         <f:input path="nameModel.lname" type="text" id="lname" placeholder="Surname" />
                    </div>
              </div>
       <p></p>
              <div class="control-group warning" >
-                   <div class="controls">
+                   <div class="control-group">
                         <f:input path="contactModel.tel" type="text" id="tel" placeholder="Telephone" />
                    </div>
              </div>      
@@ -52,13 +52,13 @@
              </div>  
              <p></p>
              <div class="control-group warning" >
-                   <div class="controls">
+                   <div class="control-group">
                  <!--       f:input path="emp_id" type="text" id="empid" placeholder="Employee ID" />-->
                    </div>
              </div> 
                     <p></p>
              <div class="control-group warning" >
-                   <div class="controls">
+                   <div class="control-group">
                         <f:input path="contactModel.email" type="text" id="email" placeholder="E-Mail" />
                    </div>
              </div>     

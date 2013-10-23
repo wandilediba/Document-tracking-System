@@ -5,6 +5,7 @@
 package com.wandile.documenttracking.client.web.Controllers;
 
 import com.wandile.documenttracking.app.facade.facade;
+import com.wandile.documenttracking.client.web.model.EmpModel;
 import com.wandile.documenttracking.client.web.model.EmployeeModel;
 import com.wandile.documenttracking.domain.Employee;
 import com.wandile.documenttracking.services.EmployeeService;
@@ -28,7 +29,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @SessionAttributes
 public class EmployeeController {
-    
+    // private Long id;
+     private Long editid;
    // private final facade data = new facade();
     
     @Autowired
@@ -40,7 +42,12 @@ public class EmployeeController {
         model.addAttribute("employeeModel", employeeModel);
         return "Employee/employee";
     }
-
+     @RequestMapping(value = "/Employeeeditform", method = RequestMethod.GET)
+    public String getEmployeeFormEdit(Model model) {
+         EmployeeModel employeeModel = new EmployeeModel();
+        model.addAttribute("employeeModel", employeeModel);
+        return "Employee/Editemployee";
+    }
    
 
     @RequestMapping(value = "/createemployee", method = RequestMethod.POST)
@@ -53,12 +60,14 @@ public class EmployeeController {
         return "Employee/listEmployees";
     }
 
-    @RequestMapping(value = "/employeeeditform", method = RequestMethod.GET)
+   /* @RequestMapping(value = "/employeeditform", method = RequestMethod.GET)
     public String getEmployeeEditForm(Model model) {
-        EmployeeModel EmployeeModel = new EmployeeModel();
-        model.addAttribute("emp_id", EmployeeModel);
-        return "Employee/form";
+        EmployeeModel employeeModel = new EmployeeModel();
+        model.addAttribute("emp_id", employeeModel);
+        return "Employee/Editemployee";
     }
+    */
+  
 
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
     public String getEmployee(Model model) {
@@ -69,12 +78,7 @@ public class EmployeeController {
         return "Employee/listEmployees";
     }
 
-    @RequestMapping(value = "/editemployee", method = RequestMethod.GET)
-    public String editEmployees(Model model) {
-        List<Employee> employees = employeeService.getEmployee();
-        model.addAttribute("employees", employees);
-        return "Employee/Employees";
-    }
+ 
 
     @RequestMapping(value = "/deleteemployee", method = RequestMethod.GET,params = {"emp_id"})
     public String deleteEmployees(@RequestParam("emp_id") Long emp_id,Model model) {
@@ -83,13 +87,31 @@ public class EmployeeController {
         model.addAttribute("employees", employees);
         return "Employee/listEmployees";
     }
-
-    @RequestMapping(value = "private/editEmployeeForm.html", method = RequestMethod.GET, params = {"emp_id"})
-    public String editEmployeeForm(@RequestParam("emp_id") String emp_id, Model model) {
-
-        return "editIndividualEmployeeForm";
-    }
+   
+    /*******************************************************/
+      @RequestMapping(value = "/updateemployee", method = RequestMethod.POST)
+    public String updateEmployee(@ModelAttribute("employee") @Validated EmpModel empModel,
+        BindingResult result, Model model) {
     
+        employeeService.updateEmployee(empModel, editid);
+
+        List<Employee> employees = employeeService.getEmployee();
+        model.addAttribute("employees", employees);
+        return "Employee/listEmployees";
+    }
+      
+      
+    @RequestMapping(value = "/editemployee", method = RequestMethod.GET, params = {"id"})
+    public String editEmployees(@RequestParam("id") Long id,  Model model) 
+    {
+        EmpModel employee = employeeService.getEmployeeToEdit(id);
+        editid = id;
+        model.addAttribute("employee", employee);
+       
+        return "Employee/Editemployee";
+    }
+     
+
 }
     
 

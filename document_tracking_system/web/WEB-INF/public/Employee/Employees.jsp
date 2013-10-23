@@ -32,7 +32,7 @@
                     <td>${employee.id}</td>
                     <td>${employee.name.fname}</td>
                     <td>${employee.name.lname} </td>
-                    <td><a href="editemployee?id=${employee.id}"> Edit </a></td>
+                    <td><a href="EditEmployeeForm?id=${employee.id}"> Edit </a></td>
                     <td><a href="deleteemployee?emp_id=${employee.id}"> Delete </a></td>
                 </tr>
 
